@@ -362,7 +362,7 @@
 
   // Fires a repository_dispatch event; the actual JSON write happens in
   // a GitHub Actions workflow, never in the browser.
-  async function dispatchEvent(eventType, payload) {
+  async function sendRepositoryDispatch(eventType, payload) {
     const cfg = getConfig();
     if (!cfg.repo || !cfg.token) {
       alert('Set your repo and a fine-grained GitHub token (Settings above) to use Track/Stop-tracking. Buy/Sell links work without a token.');
@@ -405,14 +405,14 @@
       reserve_usd: c.reserve_usd,
       volume_24h_usd: c.volume_24h_usd,
     };
-    const ok = await dispatchEvent('watch_token', trackPayload);
+    const ok = await sendRepositoryDispatch('watch_token', trackPayload);
     if (ok) {
       alert('Track request sent. It will appear here once the next Actions run commits it (usually within a few minutes).');
     }
   }
 
   async function closeTracked(tokenAddress) {
-    const ok = await dispatchEvent('close_position', { token_address: tokenAddress });
+    const ok = await sendRepositoryDispatch('close_position', { token_address: tokenAddress });
     if (ok) {
       alert('Close request sent. It will update here once the next Actions run commits it.');
     }
