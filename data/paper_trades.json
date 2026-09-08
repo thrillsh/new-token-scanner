@@ -9725,7 +9725,7 @@
       "entry_price": 6.70408488455475e-06,
       "entry_liquidity_usd": 6480.6857,
       "entry_volume_24h_usd": 36284.1124093139,
-      "status": "open",
+      "status": "closed",
       "history": [
         {
           "time": "2026-09-08T18:52:10.782611+00:00",
@@ -9738,7 +9738,8 @@
           "pct_change": -15.92
         }
       ],
-      "alerted_thresholds": []
+      "alerted_thresholds": [],
+      "closed_time": "2026-09-08T21:32:52.056997+00:00"
     }
   ]
 }
