@@ -1,0 +1,43 @@
+# Runs the read-only new-token discovery scan and publishes its shortlist
+# for the static GitHub Pages dashboard. This workflow never buys tokens.
+
+name: Scan new tokens
+
+on:
+  schedule:
+    # Every 15 minutes; GitHub Actions cron timing can be delayed under load.
+    - cron: '*/15 * * * *'
+  workflow_dispatch: {}
+
+concurrency:
+  group: scan-new-tokens
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Scan newest token pools
+        env:
+          COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
+          HONEYPOT_API_KEY: ${{ secrets.HONEYPOT_API_KEY }}
+        run: python new_token_scanner.py --pages 1
+
+      - name: Commit updated scan results
+        run: |
+          git config user.name "token-scanner-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/scan_results.json
+          git diff --staged --quiet || git commit -m "Auto scan new tokens $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push
