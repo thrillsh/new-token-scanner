@@ -202,7 +202,8 @@
       Stored only in this browser (localStorage), never committed. The repo is read directly from
       raw.githubusercontent.com &mdash; no token needed just to view. A token is only needed for the
       Track/Stop-tracking buttons, which fire a <code>repository_dispatch</code> event so GitHub Actions
-      makes the actual write. Buy/Sell buttons never touch a key &mdash; they open Jupiter/Uniswap
+      makes the actual write. For a fine-grained token, select this repository and grant
+      <code>Actions: Read and write</code>. Buy/Sell buttons never touch a key &mdash; they open Jupiter/Uniswap
       pre-filled for you to review and confirm yourself.
     </div>
   </details>
@@ -377,7 +378,14 @@
         body: JSON.stringify({ event_type: eventType, client_payload: payload }),
       });
       if (!res.ok) {
-        alert('GitHub dispatch failed: ' + res.status + ' ' + res.statusText);
+        let detail = '';
+        try {
+          const body = await res.json();
+          detail = body.message || body.documentation_url || '';
+        } catch (e) {
+          detail = res.statusText;
+        }
+        alert('GitHub dispatch failed: ' + res.status + (detail ? ' - ' + detail : ''));
         return false;
       }
       return true;
