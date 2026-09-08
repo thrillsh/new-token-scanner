@@ -1,0 +1,84 @@
+# Triggered by the dashboard's "Track" button via repository_dispatch.
+# Adds one new open paper position to data/paper_trades.json and commits it.
+# Still simulated-only -- same file ci_check_prices.py already reads/writes.
+
+name: Handle track request
+
+on:
+  repository_dispatch:
+    types: [watch_token]
+
+jobs:
+  track:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Add tracked position
+        env:
+          PAYLOAD: ${{ toJson(github.event.client_payload) }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+
+          c = json.loads(os.environ["PAYLOAD"])
+          path = "data/paper_trades.json"
+          os.makedirs("data", exist_ok=True)
+          trades = {"positions": []}
+          if os.path.exists(path):
+              with open(path) as f:
+                  trades = json.load(f)
+
+          def log_event(event_type, details):
+              # Same append-only audit trail new_token_scanner.log_event
+              # writes to -- duplicated inline here since this step runs
+              # as a standalone heredoc script rather than importing the
+              # module. Kept in the exact same format/file/path so both
+              # writers produce one consistent log.
+              entry = {"time": datetime.now(timezone.utc).isoformat(), "event": event_type, **details}
+              with open("data/activity_log.jsonl", "a") as f:
+                  f.write(json.dumps(entry) + "\n")
+
+          already = {p["token_address"] for p in trades["positions"] if p["status"] == "open"}
+          if c.get("token_address") in already:
+              print("Already tracking this token, skipping.")
+          else:
+              now = datetime.now(timezone.utc).isoformat()
+              trades["positions"].append({
+                  "symbol": c.get("symbol"),
+                  "name": c.get("name"),
+                  "network": c.get("network"),
+                  "token_address": c.get("token_address"),
+                  "entry_time": now,
+                  "entry_price": c.get("price_usd"),
+                  "entry_liquidity_usd": c.get("reserve_usd"),
+                  "entry_volume_24h_usd": c.get("volume_24h_usd"),
+                  "status": "open",
+                  "history": [{"time": now, "price": c.get("price_usd"), "pct_change": 0.0}],
+                  "alerted_thresholds": [],
+              })
+              with open(path, "w") as f:
+                  json.dump(trades, f, indent=2)
+              log_event("track_opened", {
+                  "symbol": c.get("symbol"), "network": c.get("network"),
+                  "token_address": c.get("token_address"), "entry_price": c.get("price_usd"),
+                  "entry_liquidity_usd": c.get("reserve_usd"), "entry_volume_24h_usd": c.get("volume_24h_usd"),
+                  "source": "dashboard",
+              })
+              print(f"Tracked {c.get('symbol')}")
+          PY
+
+      - name: Commit if changed
+        run: |
+          git config user.name "token-scanner-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/paper_trades.json data/activity_log.jsonl
+          git diff --staged --quiet || git commit -m "Track: ${{ github.event.client_payload.symbol }}"
+          git push

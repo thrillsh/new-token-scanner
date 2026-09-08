@@ -1,0 +1,588 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>New Token Scanner</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --bg: #0D0B08; --panel: #17140F; --border: #2E2818;
+    --amber: #D4A73C; --amber-bright: #F0C05A; --amber-dim: rgba(212,167,60,0.12);
+    --teal: #4A9A93; --green: #3FBF6B; --red: #E5534B;
+    --text: #EDE6D6; --text-dim: #9C9484; --text-faint: #665F52;
+    --mono: 'JetBrains Mono', ui-monospace, monospace;
+    --sans: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    font-family: var(--sans); background: var(--bg);
+    background-image: radial-gradient(ellipse 80% 50% at 50% -10%, rgba(212,167,60,0.06), transparent);
+    color: var(--text); min-height: 100vh;
+  }
+  .container { max-width: 1180px; margin: 0 auto; padding: 28px 24px 60px; }
+  header {
+    display: flex; justify-content: space-between; align-items: center;
+    margin-bottom: 24px; padding-bottom: 20px; border-bottom: 1px solid var(--border);
+  }
+  .brand { display: flex; align-items: center; gap: 12px; }
+  .brand-mark {
+    width: 34px; height: 34px; border-radius: 8px;
+    background: linear-gradient(145deg, var(--amber-bright), var(--amber));
+    display: flex; align-items: center; justify-content: center;
+    font-family: var(--mono); font-weight: 700; color: var(--bg); font-size: 15px;
+  }
+  h1 { font-size: 19px; font-weight: 600; }
+  h1 span { color: var(--text-dim); font-weight: 400; }
+  .meta { color: var(--text-dim); font-size: 13px; font-family: var(--mono); }
+
+  .warning-banner {
+    background: var(--amber-dim); border: 1px solid var(--border); border-left: 3px solid var(--amber);
+    border-radius: 8px; padding: 16px 20px; margin-bottom: 24px; font-size: 14px; line-height: 1.6;
+  }
+  .warning-banner strong { color: var(--amber-bright); }
+
+  .stats-row { display: flex; gap: 12px; margin-bottom: 24px; flex-wrap: wrap; }
+  .stat-pill {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+    padding: 10px 16px; font-family: var(--mono); font-size: 13px; color: var(--text-dim);
+  }
+  .stat-pill b { color: var(--text); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 18px 20px;
+  }
+  .card-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 12px; }
+  .chain-tag {
+    font-family: var(--mono); font-size: 10px; text-transform: uppercase; letter-spacing: 0.06em;
+    background: var(--teal); color: var(--bg); padding: 3px 8px; border-radius: 4px; font-weight: 700;
+  }
+  .symbol { font-size: 18px; font-weight: 700; margin-top: 6px; }
+  .name { color: var(--text-dim); font-size: 13px; }
+  .age-badge { font-family: var(--mono); font-size: 12px; color: var(--amber-bright); text-align: right; }
+
+  .stats-mini { display: grid; grid-template-columns: 1fr 1fr; gap: 8px 16px; margin: 14px 0; font-family: var(--mono); font-size: 13px; }
+  .stats-mini .label { color: var(--text-faint); font-size: 11px; text-transform: uppercase; }
+  .stats-mini .value { color: var(--text); }
+
+  .link-row { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 14px; }
+  .link-btn {
+    font-family: var(--mono); font-size: 12px; text-decoration: none;
+    background: rgba(255,255,255,0.03); border: 1px solid var(--border); color: var(--text);
+    padding: 6px 12px; border-radius: 6px; transition: all 0.15s;
+  }
+  .link-btn:hover { border-color: var(--amber); color: var(--amber-bright); }
+  .link-btn.primary { border-color: var(--teal); color: var(--teal); }
+  .link-btn.primary:hover { background: var(--teal); color: var(--bg); }
+  .link-btn.search-fallback { opacity: 0.75; }
+  .link-btn.search-fallback::after { content: " *"; }
+  .link-btn.track-btn { border-color: var(--amber); color: var(--amber-bright); font-weight: 600; }
+  .link-btn.track-btn:hover { background: var(--amber); color: var(--bg); }
+  .link-btn.track-btn.tracked { border-color: var(--text-faint); color: var(--text-faint); cursor: default; }
+  .link-btn.track-btn.tracked:hover { background: none; color: var(--text-faint); }
+
+  .tracked-section { margin: 32px 0 36px; }
+  .tracked-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 14px; }
+  .tracked-header h2 { font-size: 16px; font-weight: 600; }
+  .tracked-header h2 span { color: var(--text-dim); font-weight: 400; font-size: 13px; }
+  .refresh-btn {
+    font-family: var(--mono); font-size: 12px; background: var(--amber); color: var(--bg);
+    border: none; padding: 7px 14px; border-radius: 6px; cursor: pointer; font-weight: 700;
+  }
+  .refresh-btn:hover { background: var(--amber-bright); }
+  .refresh-btn:disabled { opacity: 0.5; cursor: default; }
+  .pos-card {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 10px;
+    padding: 14px 18px; margin-bottom: 10px; display: flex; justify-content: space-between; align-items: center; gap: 16px;
+  }
+  .pos-left { display: flex; flex-direction: column; gap: 2px; }
+  .pos-symbol { font-weight: 700; font-size: 15px; }
+  .pos-meta { font-family: var(--mono); font-size: 12px; color: var(--text-dim); }
+  .pos-right { text-align: right; display: flex; align-items: center; gap: 14px; }
+  .pos-pct { font-family: var(--mono); font-size: 18px; font-weight: 700; }
+  .pos-pct.up { color: var(--green); }
+  .pos-pct.down { color: var(--red); }
+  .pos-prices { font-family: var(--mono); font-size: 12px; color: var(--text-faint); }
+  .close-btn {
+    font-family: var(--mono); font-size: 11px; background: none; color: var(--text-faint);
+    border: 1px solid var(--border); padding: 5px 10px; border-radius: 5px; cursor: pointer;
+  }
+  .close-btn:hover { border-color: var(--red); color: var(--red); }
+  .tracked-stats { display: flex; gap: 12px; margin-bottom: 14px; flex-wrap: wrap; }
+  .tstat-pill {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+    padding: 10px 16px; font-family: var(--mono); font-size: 13px; color: var(--text-dim);
+  }
+  .tstat-pill b { color: var(--text); }
+  .tstat-pill b.up { color: var(--green); }
+  .tstat-pill b.down { color: var(--red); }
+
+  .addr {
+    font-family: var(--mono); font-size: 11px; color: var(--text-faint);
+    word-break: break-all; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border);
+  }
+
+  .hp-badge {
+    font-family: var(--mono); font-size: 11px; font-weight: 700; text-transform: uppercase;
+    letter-spacing: 0.04em; padding: 5px 10px; border-radius: 5px; margin-bottom: 12px; display: inline-block;
+  }
+  .hp-flagged { background: rgba(229,83,75,0.15); color: var(--red); border: 1px solid rgba(229,83,75,0.4); }
+  .hp-checked_ok { background: rgba(63,191,107,0.1); color: var(--green); border: 1px solid rgba(63,191,107,0.25); }
+  .hp-unknown, .hp-not_supported { background: rgba(156,148,132,0.08); color: var(--text-dim); border: 1px solid var(--border); }
+
+  .empty-state { text-align: center; padding: 60px 20px; color: var(--text-dim); }
+  .footer-note { text-align: center; color: var(--text-faint); font-size: 12px; margin-top: 28px; font-family: var(--mono); }
+  .footnote-star { color: var(--text-faint); font-size: 12px; margin-top: 20px; font-family: var(--mono); }
+
+  .link-btn.buy-btn { border-color: var(--green); color: var(--green); font-weight: 600; }
+  .link-btn.buy-btn:hover { background: var(--green); color: var(--bg); }
+  .link-btn.sell-btn { border-color: var(--red); color: var(--red); font-weight: 600; }
+  .link-btn.sell-btn:hover { background: var(--red); color: var(--bg); }
+
+  .settings-panel {
+    background: var(--panel); border: 1px solid var(--border); border-radius: 8px;
+    padding: 14px 18px; margin-bottom: 20px; font-family: var(--mono); font-size: 12px;
+  }
+  .settings-panel summary { cursor: pointer; color: var(--text-dim); }
+  .settings-row { display: flex; gap: 8px; margin-top: 10px; flex-wrap: wrap; align-items: center; }
+  .settings-row input {
+    background: var(--bg); border: 1px solid var(--border); color: var(--text);
+    font-family: var(--mono); font-size: 12px; padding: 6px 10px; border-radius: 5px; flex: 1; min-width: 180px;
+  }
+  .settings-row button {
+    font-family: var(--mono); font-size: 12px; background: var(--amber); color: var(--bg);
+    border: none; padding: 6px 12px; border-radius: 5px; cursor: pointer; font-weight: 700;
+  }
+  .settings-note { color: var(--text-faint); margin-top: 8px; line-height: 1.5; }
+
+  .signals-section { margin: 0 0 28px; }
+  .signal-card {
+    background: var(--panel); border: 1px solid var(--border); border-left: 3px solid var(--amber);
+    border-radius: 8px; padding: 12px 16px; margin-bottom: 8px;
+    display: flex; justify-content: space-between; align-items: center; gap: 14px; flex-wrap: wrap;
+  }
+  .signal-card.stop { border-left-color: var(--red); }
+  .signal-left { font-family: var(--mono); font-size: 13px; }
+  .signal-left b { font-size: 14px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <div class="brand">
+      <div class="brand-mark">NT</div>
+      <div>
+        <h1>New Token Scanner <span>&middot; discovery shortlist</span></h1>
+      </div>
+    </div>
+    <div class="meta" id="generated-at">--</div>
+  </header>
+
+  <div class="warning-banner">
+    <strong>Not a safety guarantee, even with honeypot checks enabled.</strong> Liquidity/volume/age filters are noise
+    reduction only. The honeypot badge (ETH/BSC/Base only &mdash; Solana isn't supported by this check) simulates a
+    real buy/sell, which is stronger evidence than the coarse filters, but still not proof of safety: it can miss
+    upgradeable contracts, delayed-activation traps, or anything that only turns malicious after launch. Token names
+    can also freely impersonate real brands/companies with zero connection to them. Always check the X link and
+    website yourself. Nothing on this page has been bought &mdash; this tool never places trades.
+  </div>
+
+  <details class="settings-panel">
+    <summary>Source &amp; wallet settings</summary>
+    <div class="settings-row">
+      <input id="cfg-repo" placeholder="github-user/repo-name" />
+      <input id="cfg-token" placeholder="Fine-grained GitHub token (repository_dispatch scope only, optional)" type="password" />
+      <input id="cfg-sol-wallet" placeholder="Your Solana wallet address (for sell links)" />
+      <button onclick="saveConfig()">Save</button>
+    </div>
+    <div class="settings-note">
+      Stored only in this browser (localStorage), never committed. The repo is read directly from
+      raw.githubusercontent.com &mdash; no token needed just to view. A token is only needed for the
+      Track/Stop-tracking buttons, which fire a <code>repository_dispatch</code> event so GitHub Actions
+      makes the actual write. Buy/Sell buttons never touch a key &mdash; they open Jupiter/Uniswap
+      pre-filled for you to review and confirm yourself.
+    </div>
+  </details>
+
+  <div class="signals-section" id="signals-section" style="display:none;">
+    <div class="tracked-header">
+      <h2>Signals <span>&middot; thresholds crossed on tracked positions</span></h2>
+    </div>
+    <div id="signals-list"></div>
+  </div>
+
+  <div class="stats-row" id="stats-row"></div>
+
+  <div class="tracked-section" id="tracked-section" style="display:none;">
+    <div class="tracked-header">
+      <h2>Tracked (simulated) <span>&middot; hypothetical only, nothing bought</span></h2>
+      <button class="refresh-btn" id="refresh-tracked-btn" onclick="refreshTracked()">Refresh prices</button>
+    </div>
+    <div class="tracked-stats" id="tracked-stats"></div>
+    <div id="tracked-list"></div>
+  </div>
+
+  <div class="grid" id="candidate-grid">
+    <div class="empty-state">Loading scan_results.json&hellip;</div>
+  </div>
+
+  <div class="footnote-star" id="footnote-star" style="display:none;">* "Self-reported" means the token's own on-chain metadata claims this handle/site &mdash; nobody verifies it, and it's exactly as trustworthy as the token's name (i.e. not on its own). A plain X search is shown when no handle was even claimed.</div>
+  <div class="footer-note" id="last-updated"></div>
+</div>
+
+<script>
+  // ---- Config (browser-local only, never committed) ----
+  const CFG_KEY = 'nts_dashboard_cfg';
+  function getConfig() {
+    try { return JSON.parse(localStorage.getItem(CFG_KEY)) || {}; }
+    catch (e) { return {}; }
+  }
+  function saveConfig() {
+    const cfg = {
+      repo: document.getElementById('cfg-repo').value.trim(),
+      token: document.getElementById('cfg-token').value.trim(),
+      solWallet: document.getElementById('cfg-sol-wallet').value.trim(),
+    };
+    localStorage.setItem(CFG_KEY, JSON.stringify(cfg));
+    load();
+  }
+  (function initConfigForm() {
+    const cfg = getConfig();
+    document.getElementById('cfg-repo').value = cfg.repo || '';
+    document.getElementById('cfg-token').value = cfg.token || '';
+    document.getElementById('cfg-sol-wallet').value = cfg.solWallet || '';
+  })();
+
+  function rawUrl(path) {
+    const cfg = getConfig();
+    if (!cfg.repo) return null;
+    return `https://raw.githubusercontent.com/${cfg.repo}/main/${path}?t=${Date.now()}`;
+  }
+
+  // ---- Swap link builder: no keys, no signing, just a pre-filled URL ----
+  function buildSwapLink(position, side) {
+    const network = (position.network || '').toLowerCase();
+    const addr = position.token_address;
+    if (network === 'solana') {
+      const cfg = getConfig();
+      const outputMint = side === 'buy' ? addr : 'So11111111111111111111111111111111111111112'; // SOL
+      const inputMint = side === 'buy' ? 'So11111111111111111111111111111111111111112' : addr;
+      let url = `https://jup.ag/swap/${inputMint}-${outputMint}`;
+      return url;
+    }
+    // EVM chains -> Uniswap
+    const chainParam = { eth: 'ethereum', bsc: 'bnb', base: 'base' }[network] || 'ethereum';
+    if (side === 'buy') {
+      return `https://app.uniswap.org/#/swap?outputCurrency=${addr}&chain=${chainParam}`;
+    }
+    return `https://app.uniswap.org/#/swap?inputCurrency=${addr}&chain=${chainParam}`;
+  }
+
+  function fmtAge(hours) {
+    if (hours === null || hours === undefined) return '--';
+    if (hours < 1) return Math.round(hours * 60) + 'm';
+    return hours.toFixed(1) + 'h';
+  }
+  function fmtUsd(v) {
+    if (v === null || v === undefined) return '--';
+    return '$' + Number(v).toLocaleString(undefined, {maximumFractionDigits: 0});
+  }
+  function esc(s) {
+    if (!s) return '';
+    const d = document.createElement('div');
+    d.textContent = s;
+    return d.innerHTML;
+  }
+
+  function renderCard(c) {
+    const links = c.links || {};
+    const hp = c.honeypot || { status: 'unknown', detail: 'Not checked' };
+    let linkButtons = '';
+
+    const hpLabels = {
+      flagged: '\u26a0 Honeypot flagged',
+      checked_ok: '\u2713 No sell restriction found',
+      not_supported: 'Not checked (chain unsupported)',
+      unknown: 'Honeypot check unavailable',
+    };
+    const hpBadge = `<div class="hp-badge hp-${esc(hp.status)}" title="${esc(hp.detail)}">${esc(hpLabels[hp.status] || 'Unknown')}</div>`;
+
+    const xClass = links.x_link_is_self_reported ? 'link-btn' : 'link-btn search-fallback';
+    const xLabel = links.x_link_is_self_reported ? 'X (self-reported \u2014 not verified)' : 'Search on X';
+    if (links.x_link) {
+      linkButtons += `<a class="${xClass}" href="${esc(links.x_link)}" target="_blank" rel="noopener">${xLabel}</a>`;
+    }
+    if (links.website && !links.website_is_social_post) {
+      linkButtons += `<a class="link-btn primary" href="${esc(links.website)}" target="_blank" rel="noopener">Website / Whitepaper</a>`;
+    }
+    if (links.website_is_social_post) {
+      linkButtons += `<span class="link-btn" style="color:var(--red); border-color:var(--red); cursor:default;" title="${esc(links.website)}">\u26a0 'Website' is just a social post, not a real site</span>`;
+    }
+    if (links.dexscreener) {
+      linkButtons += `<a class="link-btn" href="${esc(links.dexscreener)}" target="_blank" rel="noopener">Chart</a>`;
+    }
+    if (links.explorer) {
+      linkButtons += `<a class="link-btn" href="${esc(links.explorer)}" target="_blank" rel="noopener">Explorer</a>`;
+    }
+
+    const isTracked = trackedAddresses.has(c.token_address);
+    const trackBtn = isTracked
+      ? `<span class="link-btn track-btn tracked">\u2713 Tracking</span>`
+      : `<button class="link-btn track-btn" onclick='trackCandidate(${JSON.stringify(c).replace(/'/g, "&apos;")})'>\u2606 Track</button>`;
+    linkButtons += trackBtn;
+
+    return `
+      <div class="card">
+        <div class="card-top">
+          <div>
+            <span class="chain-tag">${esc(c.network)}</span>
+            <div class="symbol">${esc(c.symbol)}</div>
+            <div class="name">${esc(c.name)}</div>
+          </div>
+          <div class="age-badge">${fmtAge(c.age_hours)} old</div>
+        </div>
+        ${hpBadge}
+        <div class="stats-mini">
+          <div><div class="label">Liquidity</div><div class="value">${fmtUsd(c.reserve_usd)}</div></div>
+          <div><div class="label">24h Volume</div><div class="value">${fmtUsd(c.volume_24h_usd)}</div></div>
+          <div><div class="label">Price</div><div class="value">$${Number(c.price_usd).toPrecision(4)}</div></div>
+        </div>
+        <div class="link-row">${linkButtons}</div>
+        <div class="addr">${esc(c.token_address)}</div>
+      </div>
+    `;
+  }
+
+  let trackedAddresses = new Set();
+
+  // Fires a repository_dispatch event; the actual JSON write happens in
+  // a GitHub Actions workflow, never in the browser.
+  async function dispatchEvent(eventType, payload) {
+    const cfg = getConfig();
+    if (!cfg.repo || !cfg.token) {
+      alert('Set your repo and a fine-grained GitHub token (Settings above) to use Track/Stop-tracking. Buy/Sell links work without a token.');
+      return false;
+    }
+    try {
+      const res = await fetch(`https://api.github.com/repos/${cfg.repo}/dispatches`, {
+        method: 'POST',
+        headers: {
+          'Authorization': `token ${cfg.token}`,
+          'Accept': 'application/vnd.github+json',
+        },
+        body: JSON.stringify({ event_type: eventType, client_payload: payload }),
+      });
+      if (!res.ok) {
+        alert('GitHub dispatch failed: ' + res.status + ' ' + res.statusText);
+        return false;
+      }
+      return true;
+    } catch (e) {
+      alert('Could not reach GitHub API.');
+      return false;
+    }
+  }
+
+  async function trackCandidate(c) {
+    const ok = await dispatchEvent('watch_token', c);
+    if (ok) {
+      alert('Track request sent. It will appear here once the next Actions run commits it (usually within a few minutes).');
+    }
+  }
+
+  async function closeTracked(tokenAddress) {
+    const ok = await dispatchEvent('close_position', { token_address: tokenAddress });
+    if (ok) {
+      alert('Close request sent. It will update here once the next Actions run commits it.');
+    }
+  }
+
+  // Prices already refresh on their own via the 5-min Actions cron;
+  // this just re-fetches from the repo instead of forcing a fresh check.
+  async function refreshTracked() {
+    const btn = document.getElementById('refresh-tracked-btn');
+    btn.disabled = true;
+    btn.textContent = 'Refreshing\u2026';
+    try {
+      await loadPaperTrades();
+    } finally {
+      btn.disabled = false;
+      btn.textContent = 'Refresh prices';
+    }
+  }
+
+  function pctOf(p) {
+    const last = p.history[p.history.length - 1];
+    return last ? last.pct_change : 0;
+  }
+
+  function renderTrackedStats(positions) {
+    const open = positions.filter(p => p.status === 'open');
+    const closed = positions.filter(p => p.status === 'closed');
+    const el = document.getElementById('tracked-stats');
+    if (positions.length === 0) { el.innerHTML = ''; return; }
+
+    let html = `<div class="tstat-pill"><b>${open.length}</b> open &middot; <b>${closed.length}</b> closed</div>`;
+
+    if (closed.length > 0) {
+      const wins = closed.filter(p => pctOf(p) > 0).length;
+      const winRate = (wins / closed.length * 100).toFixed(0);
+      const avgClosed = (closed.reduce((s, p) => s + pctOf(p), 0) / closed.length);
+      const avgClass = avgClosed >= 0 ? 'up' : 'down';
+      html += `<div class="tstat-pill"><b>${winRate}%</b> win rate (closed)</div>`;
+      html += `<div class="tstat-pill">Avg return (closed): <b class="${avgClass}">${avgClosed >= 0 ? '+' : ''}${avgClosed.toFixed(2)}%</b></div>`;
+    }
+    if (open.length > 0) {
+      const avgOpen = (open.reduce((s, p) => s + pctOf(p), 0) / open.length);
+      const avgClass = avgOpen >= 0 ? 'up' : 'down';
+      html += `<div class="tstat-pill">Avg return (open, unrealized): <b class="${avgClass}">${avgOpen >= 0 ? '+' : ''}${avgOpen.toFixed(2)}%</b></div>`;
+    }
+    el.innerHTML = html;
+  }
+
+  function renderTrackedList(positions) {
+    const open = positions.filter(p => p.status === 'open');
+    const section = document.getElementById('tracked-section');
+    if (positions.length === 0) {
+      section.style.display = 'none';
+      return;
+    }
+    section.style.display = 'block';
+    renderTrackedStats(positions);
+    if (open.length === 0) {
+      document.getElementById('tracked-list').innerHTML =
+        '<div class="empty-state" style="padding:20px;">Nothing open right now &mdash; everything tracked so far has been closed.</div>';
+      return;
+    }
+    document.getElementById('tracked-list').innerHTML = open.map(p => {
+      const last = p.history[p.history.length - 1];
+      const pct = last ? last.pct_change : 0;
+      const dir = pct >= 0 ? 'up' : 'down';
+      const arrow = pct >= 0 ? '\u25b2' : '\u25bc';
+      const entryTime = new Date(p.entry_time);
+      const hoursHeld = ((Date.now() - entryTime.getTime()) / 3600000).toFixed(1);
+      return `
+        <div class="pos-card">
+          <div class="pos-left">
+            <div class="pos-symbol">${esc(p.symbol)} <span style="color:var(--text-faint); font-weight:400;">${esc(p.network)}</span></div>
+            <div class="pos-meta">Held ${hoursHeld}h &middot; entry ${fmtUsd(p.entry_liquidity_usd)} liq</div>
+          </div>
+          <div class="pos-right">
+            <div>
+              <div class="pos-prices">${Number(p.entry_price).toPrecision(4)} &rarr; ${last ? Number(last.price).toPrecision(4) : '--'}</div>
+              <div class="pos-pct ${dir}">${arrow} ${pct.toFixed(2)}%</div>
+            </div>
+            <a class="link-btn buy-btn" href="${esc(buildSwapLink(p, 'buy'))}" target="_blank" rel="noopener">Buy more</a>
+            <a class="link-btn sell-btn" href="${esc(buildSwapLink(p, 'sell'))}" target="_blank" rel="noopener">Sell</a>
+            <button class="close-btn" onclick="closeTracked('${p.token_address}')">Stop tracking</button>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  function renderSignals(positions) {
+    const section = document.getElementById('signals-section');
+    const list = document.getElementById('signals-list');
+    const withSignals = positions.filter(p =>
+      p.status === 'open' && Array.isArray(p.alerted_thresholds) && p.alerted_thresholds.length > 0
+    );
+    if (withSignals.length === 0) {
+      section.style.display = 'none';
+      return;
+    }
+    section.style.display = 'block';
+    list.innerHTML = withSignals.map(p => {
+      const latest = p.alerted_thresholds[p.alerted_thresholds.length - 1];
+      const isStop = latest < 0;
+      const pct = pctOf(p);
+      return `
+        <div class="signal-card ${isStop ? 'stop' : ''}">
+          <div class="signal-left">
+            <b>${esc(p.symbol)}</b> &middot; crossed ${latest > 0 ? '+' : ''}${latest}% &middot; currently ${pct.toFixed(2)}%
+          </div>
+          <div>
+            <a class="link-btn ${isStop ? 'sell-btn' : 'sell-btn'}" href="${esc(buildSwapLink(p, 'sell'))}" target="_blank" rel="noopener">
+              ${isStop ? 'Sell all (stop-loss)' : 'Sell some (take profit)'}
+            </a>
+          </div>
+        </div>
+      `;
+    }).join('');
+  }
+
+  async function loadPaperTrades() {
+    try {
+      const url = rawUrl('data/paper_trades.json');
+      if (!url) return;
+      const res = await fetch(url);
+      if (!res.ok) return;
+      const data = await res.json();
+      const positions = data.positions || [];
+      trackedAddresses = new Set(positions.filter(p => p.status === 'open').map(p => p.token_address));
+      renderTrackedList(positions);
+      renderSignals(positions);
+    } catch (e) {
+      // Repo not configured yet, or file not present -- Tracked/Signals panels
+      // just won't populate, but the static grid below still loads fine.
+    }
+  }
+
+  async function loadPaperTradesFrom(url) {
+    const res = await fetch(url);
+    if (!res.ok) return;
+    return res.json();
+  }
+
+  async function load() {
+    try {
+      const cfg = getConfig();
+      if (!cfg.repo) {
+        document.getElementById('candidate-grid').innerHTML =
+          '<div class="empty-state">Set your GitHub repo in "Source &amp; wallet settings" above to load data.</div>';
+        return;
+      }
+      const url = rawUrl('data/scan_results.json');
+      const res = await fetch(url);
+      if (!res.ok) throw new Error('scan_results.json not found yet -- run new_token_scanner.py first');
+      const data = await res.json();
+      const candidates = data.candidates || [];
+
+      await loadPaperTrades();
+
+      document.getElementById('generated-at').textContent = new Date(data.generated_at).toLocaleString();
+      document.getElementById('last-updated').textContent = 'Last scan: ' + new Date(data.generated_at).toLocaleString();
+
+      const chains = [...new Set(candidates.map(c => c.network))];
+      const totalLiq = candidates.reduce((s, c) => s + (c.reserve_usd || 0), 0);
+      document.getElementById('footnote-star').style.display = candidates.length > 0 ? 'block' : 'none';
+
+      document.getElementById('stats-row').innerHTML = `
+        <div class="stat-pill"><b>${candidates.length}</b> candidates</div>
+        <div class="stat-pill"><b>${chains.length}</b> chain(s): ${chains.join(', ')}</div>
+        <div class="stat-pill">${fmtUsd(totalLiq)} combined liquidity</div>
+      `;
+
+      const grid = document.getElementById('candidate-grid');
+      if (candidates.length === 0) {
+        grid.innerHTML = '<div class="empty-state">No candidates passed the filters on the last scan. That\'s a normal, quiet outcome.</div>';
+      } else {
+        grid.innerHTML = candidates.map(renderCard).join('');
+      }
+    } catch (e) {
+      document.getElementById('candidate-grid').innerHTML =
+        `<div class="empty-state">Could not load scan_results.json (${esc(e.message)})</div>`;
+    }
+  }
+
+  load();
+  // Data only actually changes every ~5 min (Actions cron floor); polling
+  // raw.githubusercontent every 45s just picks up the latest commit sooner,
+  // and it has no meaningful rate limit unlike the GitHub API.
+  setInterval(load, 45000);
+</script>
+</body>
+</html>

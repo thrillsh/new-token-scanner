@@ -1,0 +1,60 @@
+# Basic/testing-stage workflow: checks OPEN tracked paper-trade positions
+# every 5 minutes (GitHub Actions' minimum cron interval -- can't go
+# tighter than this), sends ntfy alerts on threshold crossings, and
+# commits the updated data/paper_trades.json back to the repo so
+# history persists across runs (runners are stateless otherwise).
+#
+# Still simulated-only. This workflow never touches a wallet and cannot
+# execute a trade -- it only reads prices and writes to a JSON file in
+# this repo.
+#
+# Setup required (repo Settings -> Secrets and variables -> Actions):
+#   COINGECKO_API_KEY  (secret) -- your existing CoinGecko demo key
+#   NTFY_TOPIC         (secret or variable) -- a long, random, unguessable
+#                       topic name, e.g. "nts-a8f3k2m9x7-alerts"
+#                       (ntfy topics are public URLs -- anyone who knows
+#                       the exact name can subscribe, so don't use
+#                       anything guessable)
+
+name: Track prices and alert
+
+on:
+  schedule:
+    - cron: '*/5 * * * *'
+  workflow_dispatch: {}   # lets you trigger it manually from the Actions tab too
+
+# Prevents overlapping runs from racing each other on the same commit --
+# if a run is still going when the next one would start, skip the new one
+# rather than risk a git conflict.
+concurrency:
+  group: track-prices
+  cancel-in-progress: false
+
+jobs:
+  check:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Install dependencies
+        run: pip install requests python-dotenv
+
+      - name: Check tracked positions
+        env:
+          COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
+          NTFY_TOPIC: ${{ secrets.NTFY_TOPIC }}
+        run: python ci_check_prices.py
+
+      - name: Commit updated tracking data (only if changed)
+        run: |
+          git config user.name "token-scanner-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/paper_trades.json
+          git diff --staged --quiet || git commit -m "Auto price check $(date -u +'%Y-%m-%d %H:%M UTC')"
+          git push

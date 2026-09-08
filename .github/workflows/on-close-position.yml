@@ -1,0 +1,79 @@
+# Triggered by the dashboard's "Stop tracking" button via repository_dispatch.
+# Marks a paper position closed in data/paper_trades.json and commits it.
+# Still simulated-only.
+
+name: Handle close request
+
+on:
+  repository_dispatch:
+    types: [close_position]
+
+jobs:
+  close:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Close position
+        env:
+          PAYLOAD: ${{ toJson(github.event.client_payload) }}
+        run: |
+          python - <<'PY'
+          import json, os
+          from datetime import datetime, timezone
+
+          c = json.loads(os.environ["PAYLOAD"])
+          path = "data/paper_trades.json"
+          if not os.path.exists(path):
+              print("No paper_trades.json yet, nothing to close.")
+              raise SystemExit(0)
+
+          with open(path) as f:
+              trades = json.load(f)
+
+          def log_event(event_type, details):
+              # Same append-only audit trail new_token_scanner.log_event
+              # writes to -- duplicated inline here for the same reason
+              # as on-watch-token.yml (standalone heredoc, no import).
+              entry = {"time": datetime.now(timezone.utc).isoformat(), "event": event_type, **details}
+              with open("data/activity_log.jsonl", "a") as f:
+                  f.write(json.dumps(entry) + "\n")
+
+          found = False
+          for p in trades["positions"]:
+              if p["token_address"] == c.get("token_address") and p["status"] == "open":
+                  p["status"] = "closed"
+                  p["closed_time"] = datetime.now(timezone.utc).isoformat()
+                  found = True
+                  last = p["history"][-1] if p.get("history") else {}
+                  log_event("track_closed", {
+                      "symbol": p.get("symbol"), "network": p.get("network"),
+                      "token_address": p.get("token_address"),
+                      "entry_price": p.get("entry_price"),
+                      "final_price": last.get("price"),
+                      "final_pct_change": last.get("pct_change"),
+                      "source": "dashboard",
+                  })
+                  break
+
+          if found:
+              with open(path, "w") as f:
+                  json.dump(trades, f, indent=2)
+              print("Closed position.")
+          else:
+              print("Position not found or already closed.")
+          PY
+
+      - name: Commit if changed
+        run: |
+          git config user.name "token-scanner-bot"
+          git config user.email "actions@users.noreply.github.com"
+          git add data/paper_trades.json data/activity_log.jsonl
+          git diff --staged --quiet || git commit -m "Close tracked position"
+          git push
