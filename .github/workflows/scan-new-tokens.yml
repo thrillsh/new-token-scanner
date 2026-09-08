@@ -10,7 +10,7 @@ on:
   workflow_dispatch: {}
 
 concurrency:
-  group: scan-new-tokens
+  group: repository-data-writes
   cancel-in-progress: false
 
 jobs:

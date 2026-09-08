@@ -27,7 +27,7 @@ on:
 # if a run is still going when the next one would start, skip the new one
 # rather than risk a git conflict.
 concurrency:
-  group: track-prices
+  group: repository-data-writes
   cancel-in-progress: false
 
 jobs:

@@ -8,6 +8,10 @@ on:
   repository_dispatch:
     types: [watch_token]
 
+concurrency:
+  group: repository-data-writes
+  cancel-in-progress: false
+
 jobs:
   track:
     runs-on: ubuntu-latest

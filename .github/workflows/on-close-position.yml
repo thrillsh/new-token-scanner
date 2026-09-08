@@ -8,6 +8,10 @@ on:
   repository_dispatch:
     types: [close_position]
 
+concurrency:
+  group: repository-data-writes
+  cancel-in-progress: false
+
 jobs:
   close:
     runs-on: ubuntu-latest
