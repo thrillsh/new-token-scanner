@@ -396,7 +396,16 @@
   }
 
   async function trackCandidate(c) {
-    const ok = await dispatchEvent('watch_token', c);
+    const trackPayload = {
+      symbol: c.symbol,
+      name: c.name,
+      network: c.network,
+      token_address: c.token_address,
+      price_usd: c.price_usd,
+      reserve_usd: c.reserve_usd,
+      volume_24h_usd: c.volume_24h_usd,
+    };
+    const ok = await dispatchEvent('watch_token', trackPayload);
     if (ok) {
       alert('Track request sent. It will appear here once the next Actions run commits it (usually within a few minutes).');
     }
