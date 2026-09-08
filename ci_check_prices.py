@@ -39,15 +39,34 @@ NTFY_TOPIC = os.environ.get("NTFY_TOPIC", "").strip()
 NTFY_URL = f"https://ntfy.sh/{NTFY_TOPIC}" if NTFY_TOPIC else None
 
 
-def send_alert(title: str, message: str, priority: str = "default"):
+def send_alert(title: str, message: str, priority: str = "default", tags: str = ""):
+    """
+    HTTP headers only support ASCII/latin-1 -- raw emoji unicode in the
+    Title header (like the original rocket/warning symbols) fails to
+    encode and silently breaks every send. ntfy's fix for this is the
+    "Tags" header: comma-separated short codes (e.g. "rocket",
+    "warning") that ntfy's own apps render as emoji client-side. Title
+    stays plain ASCII text; tags carry the visual signal instead.
+    See: https://docs.ntfy.sh/publish/#tags-emojis
+    """
     if not NTFY_URL:
         print(f"[no NTFY_TOPIC set -- would have alerted] {title}: {message}")
         return
     try:
+        ascii_title = title.encode("ascii", "ignore").decode().strip()
+        if not ascii_title:
+            # Symbol was entirely non-ASCII (e.g. 屎壳郎, 😎WOJA) and got
+            # stripped to nothing -- fall back to a generic title rather
+            # than send an empty/whitespace-only header, which some
+            # HTTP clients (including requests) reject outright.
+            ascii_title = "Tracked token alert"
+        headers = {"Title": ascii_title, "Priority": priority}
+        if tags:
+            headers["Tags"] = tags
         requests.post(
             NTFY_URL,
             data=message.encode("utf-8"),
-            headers={"Title": title, "Priority": priority},
+            headers=headers,
             timeout=10,
         )
     except Exception as e:
@@ -102,14 +121,15 @@ def run_check():
             crossed = check_thresholds(pos, pct_change)
             for t in crossed:
                 direction = "pumped" if t > 0 else "dropped"
-                emoji = "\U0001F680" if t > 0 else "\u26a0\ufe0f"
+                tag = "rocket" if t > 0 else "warning"
                 priority = "high" if abs(t) >= 100 else "default"
                 send_alert(
-                    title=f"{emoji} {pos['symbol']} {direction} {t:+d}%",
+                    title=f"{pos['symbol']} {direction} {t:+d}%",
                     message=(f"{pos['symbol']} ({network}) now at {pct_change:+.2f}% "
                              f"since entry (${pos['entry_price']:.8f} -> ${price:.8f}). "
                              f"Simulated tracking only -- nothing bought."),
                     priority=priority,
+                    tags=tag,
                 )
                 print(f"  ALERT: {pos['symbol']} crossed {t:+d}% (now {pct_change:+.2f}%)")
                 nts.log_event("threshold_alert", {

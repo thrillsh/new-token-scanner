@@ -79,6 +79,50 @@ jobs:
               print(f"Tracked {c.get('symbol')}")
           PY
 
+      - name: Install dependencies
+        run: pip install requests
+
+      - name: Immediate price check on the newly tracked token
+        env:
+          COINGECKO_API_KEY: ${{ secrets.COINGECKO_API_KEY }}
+          PAYLOAD: ${{ toJson(github.event.client_payload) }}
+        run: |
+          python - <<'PY'
+          # Runs one real price check right away, in this same workflow run,
+          # instead of leaving the position at just its entry snapshot until
+          # the next scheduled track-prices.yml tick (up to 5 min later).
+          # This is what actually removes the "have to wait for a run to
+          # see growth" gap -- Track now produces two real data points
+          # (entry + this immediate check) instead of one.
+          import json, os
+          import sys
+          sys.path.insert(0, '.')
+          import new_token_scanner as nts
+
+          c = json.loads(os.environ["PAYLOAD"])
+          token_address = c.get("token_address")
+          network = c.get("network")
+
+          trades = nts.load_paper_trades()
+          pos = next((p for p in trades["positions"]
+                      if p["token_address"] == token_address and p["status"] == "open"), None)
+          if pos is None:
+              print("Position not found (shouldn't happen right after adding it) -- skipping immediate check.")
+              raise SystemExit(0)
+
+          price = nts.fetch_current_price(network, token_address)
+          if price is None:
+              print("No price back from this immediate check -- will just wait for the next scheduled run.")
+              raise SystemExit(0)
+
+          from datetime import datetime, timezone
+          now = datetime.now(timezone.utc).isoformat()
+          pct_change = ((price - pos["entry_price"]) / pos["entry_price"]) * 100 if pos["entry_price"] else 0.0
+          pos["history"].append({"time": now, "price": price, "pct_change": round(pct_change, 2)})
+          nts.save_paper_trades(trades)
+          print(f"Immediate check: {pos['symbol']} now at {pct_change:+.2f}% ({price})")
+          PY
+
       - name: Commit if changed
         run: |
           git config user.name "token-scanner-bot"
