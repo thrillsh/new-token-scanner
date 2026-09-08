@@ -236,9 +236,10 @@
 <script>
   // ---- Config (browser-local only, never committed) ----
   const CFG_KEY = 'nts_dashboard_cfg';
+  const DEFAULT_REPO = 'thrillsh/new-token-scanner';
   function getConfig() {
-    try { return JSON.parse(localStorage.getItem(CFG_KEY)) || {}; }
-    catch (e) { return {}; }
+    try { return { repo: DEFAULT_REPO, ...JSON.parse(localStorage.getItem(CFG_KEY) || '{}') }; }
+    catch (e) { return { repo: DEFAULT_REPO }; }
   }
   function saveConfig() {
     const cfg = {
