@@ -131,6 +131,11 @@ def watch():
     if not token_address:
         return jsonify({"error": "missing token_address"}), 400
 
+    required_fields = ["symbol", "name", "network", "price_usd", "reserve_usd", "volume_24h_usd"]
+    missing = [field for field in required_fields if c.get(field) is None]
+    if missing:
+        return jsonify({"error": f"missing required fields: {', '.join(missing)}"}), 400
+
     trades = nts.load_paper_trades()
     already = {p["token_address"] for p in trades["positions"] if p["status"] == "open"}
     if token_address in already:

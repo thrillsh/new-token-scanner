@@ -64,6 +64,9 @@ No component in this pipeline is authorized to execute a trade on its own.
 - **Write path:** Track/Close actions now trigger a `repository_dispatch`
   event (via a narrowly-scoped GitHub token) instead of a direct server
   write, so GitHub Actions remains the only thing that commits changes.
+- **Safety check:** the dashboard's local watch route now rejects incomplete
+  payloads before writing a paper-trade entry, preventing malformed
+  `data/paper_trades.json` records that could break later price checks.
 - **New: swap link builder.** Replaces the earlier private-key-based
   `DexTrader` buy/sell skeleton. Given a token address, network, and
   amount, it builds a pre-filled swap URL (Jupiter / Uniswap) — no key
