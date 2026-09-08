@@ -8854,7 +8854,7 @@
       "entry_price": 1.2904049257489e-07,
       "entry_liquidity_usd": 14237.3881,
       "entry_volume_24h_usd": 35858.6899242118,
-      "status": "open",
+      "status": "closed",
       "history": [
         {
           "time": "2026-09-08T00:43:20.830024+00:00",
@@ -9007,7 +9007,8 @@
           "pct_change": 0.0
         }
       ],
-      "alerted_thresholds": []
+      "alerted_thresholds": [],
+      "closed_time": "2026-09-08T13:58:43.337086+00:00"
     },
     {
       "symbol": "ELC",
