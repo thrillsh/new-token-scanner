@@ -64,7 +64,8 @@ No component in this pipeline is authorized to execute a trade on its own.
 - **Write path:** Track/Close actions now trigger a `repository_dispatch`
   event (via a narrowly-scoped GitHub token) instead of a direct server
   write, so GitHub Actions remains the only thing that commits changes.
-- **Safety check:** the dashboard's local watch route now rejects incomplete
+- **Safety check:** both the dashboard's local watch route and the real
+  GitHub Actions `on-watch-token.yml` workflow now reject incomplete
   payloads before writing a paper-trade entry, preventing malformed
   `data/paper_trades.json` records that could break later price checks.
 - **New: swap link builder.** Replaces the earlier private-key-based

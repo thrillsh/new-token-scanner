@@ -50,6 +50,18 @@ jobs:
               with open("data/activity_log.jsonl", "a") as f:
                   f.write(json.dumps(entry) + "\n")
 
+          required_fields = ["symbol", "name", "network", "token_address", "price_usd", "reserve_usd", "volume_24h_usd"]
+          missing_fields = [field for field in required_fields if c.get(field) is None]
+          if missing_fields:
+              print(f"Skipping invalid track payload: missing {', '.join(missing_fields)}")
+              raise SystemExit(0)
+
+          trades["positions"] = [
+              p for p in trades["positions"]
+              if p.get("token_address") is not None and p.get("symbol") is not None
+              and p.get("network") is not None and p.get("entry_price") is not None
+          ]
+
           already = {p["token_address"] for p in trades["positions"] if p["status"] == "open"}
           if c.get("token_address") in already:
               print("Already tracking this token, skipping.")
