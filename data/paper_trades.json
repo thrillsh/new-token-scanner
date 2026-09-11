@@ -9288,7 +9288,7 @@
       "entry_price": 0.00142138914012457,
       "entry_liquidity_usd": 7889.5769,
       "entry_volume_24h_usd": 1404.8056855032,
-      "status": "open",
+      "status": "closed",
       "history": [
         {
           "time": "2026-09-08T00:43:29.719749+00:00",
@@ -9548,7 +9548,8 @@
       ],
       "alerted_thresholds": [
         50
-      ]
+      ],
+      "closed_time": "2026-09-11T13:45:03.691620+00:00"
     },
     {
       "symbol": "BONKY",
