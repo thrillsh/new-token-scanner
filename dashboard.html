@@ -283,8 +283,12 @@
     return `https://app.uniswap.org/#/swap?inputCurrency=${addr}&chain=${chainParam}`;
   }
 
-  function fmtAge(hours) {
-    if (hours === null || hours === undefined) return '--';
+  function fmtAge(createdAtIso) {
+    if (!createdAtIso) return '--';
+    const createdMs = new Date(createdAtIso).getTime();
+    if (isNaN(createdMs)) return '--';
+    const hours = (Date.now() - createdMs) / 3600000;
+    if (hours < 0) return '--';
     if (hours < 1) return Math.round(hours * 60) + 'm';
     return hours.toFixed(1) + 'h';
   }
@@ -297,6 +301,18 @@
     const d = document.createElement('div');
     d.textContent = s;
     return d.innerHTML;
+  }
+
+  // Age is computed live from each candidate's actual pool creation
+  // timestamp (already returned by the scanner, previously unused for
+  // display) -- this ticks correctly regardless of how stale the last
+  // scan or poll cycle is, instead of showing a number frozen at
+  // whatever it was when that scan happened to run.
+  function tickAgeBadges() {
+    document.querySelectorAll('.age-badge[data-created]').forEach(el => {
+      const created = el.getAttribute('data-created');
+      if (created) el.textContent = fmtAge(created) + ' old';
+    });
   }
 
   function renderCard(c) {
@@ -330,7 +346,8 @@
       linkButtons += `<a class="link-btn" href="${esc(links.explorer)}" target="_blank" rel="noopener">Explorer</a>`;
     }
 
-    const isTracked = trackedAddresses.has(c.token_address);
+    const isTracked = trackedAddresses.has(c.token_address) ||
+      (pendingActions.get(c.token_address) && pendingActions.get(c.token_address).type === 'track');
     const trackBtn = isTracked
       ? `<span class="link-btn track-btn tracked">\u2713 Tracking</span>`
       : `<button class="link-btn track-btn" onclick='trackCandidate(${JSON.stringify(c).replace(/'/g, "&apos;")})'>\u2606 Track</button>`;
@@ -344,7 +361,7 @@
             <div class="symbol">${esc(c.symbol)}</div>
             <div class="name">${esc(c.name)}</div>
           </div>
-          <div class="age-badge">${fmtAge(c.age_hours)} old</div>
+          <div class="age-badge" data-created="${esc(c.created_at || '')}">${fmtAge(c.created_at)} old</div>
         </div>
         ${hpBadge}
         <div class="stats-mini">
@@ -359,6 +376,16 @@
   }
 
   let trackedAddresses = new Set();
+  // Optimistic UI state: tracks Track/Stop-tracking clicks that have been
+  // SENT to GitHub but not yet confirmed by a real commit landing in
+  // paper_trades.json. Keyed by token_address. This is what makes the
+  // click feel instant -- the position appears/disappears in the UI right
+  // away, then gets reconciled (or reverted on failure/timeout) once the
+  // next poll actually sees the real state. The backend round-trip time
+  // itself is unchanged; only the *perceived* wait is removed.
+  let pendingActions = new Map();
+  const PENDING_TIMEOUT_MS = 3 * 60 * 1000; // if not confirmed in 3 min, assume something's wrong and surface it
+  let lastKnownPositions = []; // last real data from the repo, so optimistic re-renders don't need a fresh fetch
 
   // Fires a repository_dispatch event; the actual JSON write happens in
   // a GitHub Actions workflow, never in the browser.
@@ -396,25 +423,41 @@
   }
 
   async function trackCandidate(c) {
+    // Show it as tracked IMMEDIATELY -- don't wait for the dispatch to
+    // even be sent, let alone for GitHub Actions to run and commit.
+    pendingActions.set(c.token_address, { type: 'track', data: c, addedAt: Date.now() });
+    trackedAddresses.add(c.token_address); // so the grid card itself flips to "Tracking" right away too
+    renderTrackedFromLastKnown();
+    load(); // re-render the candidate grid so this card's button updates now, not on the next poll
+
     const trackPayload = {
-      symbol: c.symbol,
-      name: c.name,
-      network: c.network,
-      token_address: c.token_address,
-      price_usd: c.price_usd,
-      reserve_usd: c.reserve_usd,
-      volume_24h_usd: c.volume_24h_usd,
+      symbol: c.symbol, name: c.name, network: c.network, token_address: c.token_address,
+      price_usd: c.price_usd, reserve_usd: c.reserve_usd, volume_24h_usd: c.volume_24h_usd,
     };
     const ok = await sendRepositoryDispatch('watch_token', trackPayload);
-    if (ok) {
-      alert('Track request sent. It will appear here once the next Actions run commits it (usually within a few minutes).');
+    if (!ok) {
+      // Dispatch itself was rejected (bad token, bad repo, etc.) -- revert
+      // the optimistic state rather than leave a phantom "tracked" card.
+      pendingActions.delete(c.token_address);
+      trackedAddresses.delete(c.token_address);
+      renderTrackedFromLastKnown();
+      load();
     }
+    // On success we deliberately do NOT alert or block -- the position
+    // already looks tracked. loadPaperTrades() reconciles it against the
+    // real commit on the next poll, silently clearing the pending flag.
   }
 
   async function closeTracked(tokenAddress) {
+    // Same pattern in reverse: mark it as closing right away so the UI
+    // reflects the click instantly, reconciled once the real close lands.
+    pendingActions.set(tokenAddress, { type: 'close', addedAt: Date.now() });
+    renderTrackedFromLastKnown();
+
     const ok = await sendRepositoryDispatch('close_position', { token_address: tokenAddress });
-    if (ok) {
-      alert('Close request sent. It will update here once the next Actions run commits it.');
+    if (!ok) {
+      pendingActions.delete(tokenAddress);
+      renderTrackedFromLastKnown();
     }
   }
 
@@ -461,6 +504,42 @@
     el.innerHTML = html;
   }
 
+  // Combines real repo data with any not-yet-confirmed Track/Close clicks:
+  // - a pending 'track' not yet in the real open list becomes a synthetic
+  //   row so it shows up instantly
+  // - a real open position with a pending 'close' gets flagged so it
+  //   renders as "Stopping..." instead of disappearing outright (safer:
+  //   if the close request ends up failing, the row is still there and
+  //   accurate rather than having vanished incorrectly)
+  function buildMergedPositions(realPositions) {
+    const merged = realPositions.map(p => {
+      const pending = pendingActions.get(p.token_address);
+      if (pending && pending.type === 'close' && p.status === 'open') {
+        return { ...p, _pending: 'close' };
+      }
+      return p;
+    });
+    const realOpenAddrs = new Set(realPositions.filter(p => p.status === 'open').map(p => p.token_address));
+    pendingActions.forEach((pending, addr) => {
+      if (pending.type === 'track' && !realOpenAddrs.has(addr)) {
+        const c = pending.data;
+        merged.push({
+          symbol: c.symbol, name: c.name, network: c.network, token_address: c.token_address,
+          entry_time: new Date(pending.addedAt).toISOString(), entry_price: c.price_usd,
+          entry_liquidity_usd: c.reserve_usd, entry_volume_24h_usd: c.volume_24h_usd,
+          status: 'open', history: [{ time: new Date(pending.addedAt).toISOString(), price: c.price_usd, pct_change: 0 }],
+          alerted_thresholds: [], _pending: 'track',
+        });
+      }
+    });
+    return merged;
+  }
+
+  function renderTrackedFromLastKnown() {
+    renderTrackedList(buildMergedPositions(lastKnownPositions));
+    renderSignals(lastKnownPositions);
+  }
+
   function renderTrackedList(positions) {
     const open = positions.filter(p => p.status === 'open');
     const section = document.getElementById('tracked-section');
@@ -482,11 +561,31 @@
       const arrow = pct >= 0 ? '\u25b2' : '\u25bc';
       const entryTime = new Date(p.entry_time);
       const hoursHeld = ((Date.now() - entryTime.getTime()) / 3600000).toFixed(1);
+
+      if (p._pending === 'track') {
+        return `
+          <div class="pos-card" style="opacity:0.65;">
+            <div class="pos-left">
+              <div class="pos-symbol">${esc(p.symbol)} <span style="color:var(--text-faint); font-weight:400;">${esc(p.network)}</span></div>
+              <div class="pos-meta">\u23f3 Confirming on-chain record\u2026</div>
+            </div>
+            <div class="pos-right"><div class="pos-prices">entry ${Number(p.entry_price).toPrecision(4)}</div></div>
+          </div>
+        `;
+      }
+
+      const stoppingTag = p._pending === 'close'
+        ? `<div class="pos-meta" style="color:var(--amber-bright);">\u23f3 Stopping\u2026</div>` : '';
+      const closeBtn = p._pending === 'close'
+        ? `<button class="close-btn" disabled>Stopping\u2026</button>`
+        : `<button class="close-btn" onclick="closeTracked('${p.token_address}')">Stop tracking</button>`;
+
       return `
-        <div class="pos-card">
+        <div class="pos-card" style="${p._pending === 'close' ? 'opacity:0.65;' : ''}">
           <div class="pos-left">
             <div class="pos-symbol">${esc(p.symbol)} <span style="color:var(--text-faint); font-weight:400;">${esc(p.network)}</span></div>
             <div class="pos-meta">Held ${hoursHeld}h &middot; entry ${fmtUsd(p.entry_liquidity_usd)} liq</div>
+            ${stoppingTag}
           </div>
           <div class="pos-right">
             <div>
@@ -495,7 +594,7 @@
             </div>
             <a class="link-btn buy-btn" href="${esc(buildSwapLink(p, 'buy'))}" target="_blank" rel="noopener">Buy more</a>
             <a class="link-btn sell-btn" href="${esc(buildSwapLink(p, 'sell'))}" target="_blank" rel="noopener">Sell</a>
-            <button class="close-btn" onclick="closeTracked('${p.token_address}')">Stop tracking</button>
+            ${closeBtn}
           </div>
         </div>
       `;
@@ -540,8 +639,33 @@
       if (!res.ok) return;
       const data = await res.json();
       const positions = data.positions || [];
-      trackedAddresses = new Set(positions.filter(p => p.status === 'open').map(p => p.token_address));
-      renderTrackedList(positions);
+      lastKnownPositions = positions;
+
+      const realOpenAddrs = new Set(positions.filter(p => p.status === 'open').map(p => p.token_address));
+
+      // Reconcile: a pending 'track' is confirmed once it actually shows up
+      // as a real open position; a pending 'close' is confirmed once it's
+      // NO LONGER in the real open set (i.e. really closed now). Anything
+      // that's taken longer than PENDING_TIMEOUT_MS to confirm is unusual
+      // enough (a stuck/slow workflow run, a dispatch that silently didn't
+      // fire) that it's worth surfacing rather than leaving it stuck
+      // showing "Confirming..."/"Stopping..." forever.
+      const stale = [];
+      pendingActions.forEach((pending, addr) => {
+        const confirmed = pending.type === 'track' ? realOpenAddrs.has(addr) : !realOpenAddrs.has(addr);
+        if (confirmed) {
+          pendingActions.delete(addr);
+        } else if (Date.now() - pending.addedAt > PENDING_TIMEOUT_MS) {
+          stale.push({ addr, type: pending.type });
+          pendingActions.delete(addr);
+        }
+      });
+      if (stale.length > 0) {
+        console.warn('These actions did not confirm within 3 minutes -- check the Actions tab for a stuck/failed run:', stale);
+      }
+
+      trackedAddresses = realOpenAddrs;
+      renderTrackedList(buildMergedPositions(positions));
       renderSignals(positions);
     } catch (e) {
       // Repo not configured yet, or file not present -- Tracked/Signals panels
@@ -601,6 +725,11 @@
   // raw.githubusercontent every 45s just picks up the latest commit sooner,
   // and it has no meaningful rate limit unlike the GitHub API.
   setInterval(load, 45000);
+  // Age badges tick independently and far more often than the data poll --
+  // this is what actually fixes a badge reading "6m old" when the token
+  // is really an hour old: it recomputes from the real timestamp every
+  // few seconds rather than only refreshing whenever new data happens to load.
+  setInterval(tickAgeBadges, 5000);
 </script>
 </body>
 </html>
