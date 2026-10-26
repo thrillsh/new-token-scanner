@@ -1,96 +1,231 @@
 {
-  "generated_at": "2026-10-26T19:03:06.351825",
+  "generated_at": "2026-10-26T23:07:42.757566",
   "candidates": [
     {
-      "symbol": "USDG",
-      "name": "Global Dollar",
-      "token_address": "0xe343167631d89b6ffc58b88d6b7fb0228795491d",
-      "pool_address": "0x4d42ebe9d5b78b7ae99b0ca00e198cced0a111f10c4f298f619805226749092f",
-      "reserve_usd": 325793.3913,
-      "volume_24h_usd": 194800.266605754,
-      "price_usd": 1.00051034197429,
-      "created_at": "2026-10-26T18:34:59Z",
-      "age_hours": 0.46,
-      "network": "eth",
-      "website": "https://globaldollar.com",
-      "twitter_handle": "global_dollar",
-      "description": "Global Dollar (USDG) is a single-currency stablecoin pegged to the US dollar. USDG is fully redeemable from Paxos on a one-to-one basis for US dollars. \n\nGlobal Dollar (USDG) is issued by Paxos Digital Singapore (PDS), which is a Major Payments Institution supervised by the Monetary Authority of Singapore. USDG is issued in the EU by Paxos Issuance Europe Oy (PIE), an Electronic Money Institution regulated by the Finnish Financial Supervisory Authority (FIN-FSA). USDG is fully compliant with the EU\u2019s Markets in Crypto Assets Regulation (MiCA).\n\nUSDG combines the stability and reach of US dollars with the added security and efficiency of blockchain technology. USDG is always available and accessible, offering high transfer speeds and programmability. USDG is always available for 1:1 redemption for US dollars, 24/7.\n\nUSDG's issuance will adhere to strict regulatory standards, including requirements for value stability, capital adequacy, redemption and par and comprehensive disclosure. Specific regulatory obligations include substantial capital reserve requirements, frequent regulatory examinations, monthly independent attestations of reserve assets, monitoring of operating procedures and annual audits of reserve assets. It also provides protection from bankruptcy by holding stablecoin reserve assets in segregated accounts held on trust by PDS for the benefit of USDG holders.  \n\nUSDG represents the pinnacle of regulated stablecoins, offering unparalleled stability, security and compliance in the rapidly evolving world of digital finance.",
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Response received but didn't match expected format -- verify manually"
-      },
-      "links": {
-        "x_link": "https://x.com/global_dollar",
-        "x_link_is_self_reported": true,
-        "website": "https://globaldollar.com",
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/eth/0x4d42ebe9d5b78b7ae99b0ca00e198cced0a111f10c4f298f619805226749092f",
-        "explorer": "https://etherscan.io/token/0xe343167631d89b6ffc58b88d6b7fb0228795491d"
-      }
-    },
-    {
-      "symbol": "FLAT",
-      "name": "Flat.fun",
-      "token_address": "0xc996c5a04e449139632631825f03034955b444ea",
-      "pool_address": "0x93dc6631ebd27a18e53ae5fac0f684ae0a640532",
-      "reserve_usd": 15291.9702,
-      "volume_24h_usd": 3048.2500161259,
-      "price_usd": 2.00458779239374e-05,
-      "created_at": "2026-10-26T18:48:59Z",
-      "age_hours": 0.23,
+      "symbol": "LAUNCH",
+      "name": "Launch",
+      "token_address": "0xfaed0f847972fb9b865b5ecc61948d8629ea974d",
+      "pool_address": "0x8d9a8aa76373bd24f95d3a163de75ddf635da196",
+      "reserve_usd": 934141.6155,
+      "volume_24h_usd": 6412.1229343785,
+      "price_usd": 0.00187595520906972,
+      "created_at": "2026-10-26T22:29:23Z",
+      "age_hours": 0.63,
       "network": "eth",
       "website": null,
       "twitter_handle": null,
       "description": null,
       "honeypot": {
-        "status": "unknown",
-        "detail": "Response received but didn't match expected format -- verify manually"
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24FLAT%20OR%200xc996c5a04e449139632631825f03034955b444ea&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24LAUNCH%20OR%200xfaed0f847972fb9b865b5ecc61948d8629ea974d&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/eth/0x93dc6631ebd27a18e53ae5fac0f684ae0a640532",
-        "explorer": "https://etherscan.io/token/0xc996c5a04e449139632631825f03034955b444ea"
+        "dexscreener": "https://dexscreener.com/eth/0x8d9a8aa76373bd24f95d3a163de75ddf635da196",
+        "explorer": "https://etherscan.io/token/0xfaed0f847972fb9b865b5ecc61948d8629ea974d"
       }
     },
     {
-      "symbol": "TRX",
-      "name": "TRX",
-      "token_address": "0xb2000000000000000000002190f6e5b01fe8603b",
-      "pool_address": "0xb64a7193b947613ab5fd34269076bfb22f0f6f4930ea662dd72ffd4b7b60825b",
-      "reserve_usd": 12253.3488,
-      "volume_24h_usd": 7918.8125969097,
-      "price_usd": 1.85135520833775e-05,
-      "created_at": "2026-10-26T18:45:59Z",
-      "age_hours": 0.28,
+      "symbol": "USDP",
+      "name": "United States Dividend Program",
+      "token_address": "0x5f09dfce695cdb9e6b6b671b29910c07b3a34297",
+      "pool_address": "0x2e0a33019d15d9b2972733281f3dfa18197460d7cdfb03b08220d4cce76e1074",
+      "reserve_usd": 150611.9828,
+      "volume_24h_usd": 104043.332143337,
+      "price_usd": 0.349880459505199,
+      "created_at": "2026-10-26T23:05:17Z",
+      "age_hours": 0.03,
       "network": "base",
       "website": null,
       "twitter_handle": null,
       "description": null,
       "honeypot": {
         "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xb2000000000000000000002190f6e5b01fe8603b&chainID=8453"
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x5f09dfce695cdb9e6b6b671b29910c07b3a34297&chainID=8453"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24TRX%20OR%200xb2000000000000000000002190f6e5b01fe8603b&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24USDP%20OR%200x5f09dfce695cdb9e6b6b671b29910c07b3a34297&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0xb64a7193b947613ab5fd34269076bfb22f0f6f4930ea662dd72ffd4b7b60825b",
-        "explorer": "https://basescan.org/token/0xb2000000000000000000002190f6e5b01fe8603b"
+        "dexscreener": "https://dexscreener.com/base/0x2e0a33019d15d9b2972733281f3dfa18197460d7cdfb03b08220d4cce76e1074",
+        "explorer": "https://basescan.org/token/0x5f09dfce695cdb9e6b6b671b29910c07b3a34297"
       }
     },
     {
-      "symbol": "Sojo",
-      "name": "Sojo",
-      "token_address": "0xafa303abd42ecde55bd537961ccf9faf878c7777",
-      "pool_address": "0xe3bb545a24c03e89aa73a5e23306c6aaf1118e5e",
-      "reserve_usd": 10049.4607,
-      "volume_24h_usd": 1916.2497967027,
-      "price_usd": 3.15168942372598e-05,
-      "created_at": "2026-10-26T18:59:49Z",
+      "symbol": "BOW",
+      "name": "Save Bow",
+      "token_address": "0x1609d74938f68c1227196577cc867da4018da6c9",
+      "pool_address": "0xbd2640a196a1147da1ebe0b6170558ab1a9fe9ef",
+      "reserve_usd": 53365.3963,
+      "volume_24h_usd": 31579.3669334508,
+      "price_usd": 0.000635070261061404,
+      "created_at": "2026-10-26T21:59:59Z",
+      "age_hours": 1.12,
+      "network": "eth",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "flagged",
+        "detail": "honeypot.is flagged this as a honeypot (sell likely blocked)"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24BOW%20OR%200x1609d74938f68c1227196577cc867da4018da6c9&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xbd2640a196a1147da1ebe0b6170558ab1a9fe9ef",
+        "explorer": "https://etherscan.io/token/0x1609d74938f68c1227196577cc867da4018da6c9"
+      }
+    },
+    {
+      "symbol": "Apple",
+      "name": "Apple",
+      "token_address": "XtjkigaiVJ78mkDAa3UxWTtogoUcM6fftYMR4Pcpump",
+      "pool_address": "BQeCsv5zFAvAZo7QMAZ35fpXUc1NNMMGfaL3aBj7ZzJj",
+      "reserve_usd": 45058.5386,
+      "volume_24h_usd": 14976.9784219372,
+      "price_usd": 0.0003153259411809383,
+      "created_at": "2026-10-26T23:06:38Z",
+      "age_hours": 0.01,
+      "network": "solana",
+      "website": null,
+      "twitter_handle": null,
+      "description": "Apple",
+      "honeypot": {
+        "status": "not_supported",
+        "detail": "solana not supported by this honeypot check (EVM-only)"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24Apple%20OR%20XtjkigaiVJ78mkDAa3UxWTtogoUcM6fftYMR4Pcpump&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/solana/BQeCsv5zFAvAZo7QMAZ35fpXUc1NNMMGfaL3aBj7ZzJj",
+        "explorer": "https://solscan.io/token/XtjkigaiVJ78mkDAa3UxWTtogoUcM6fftYMR4Pcpump"
+      }
+    },
+    {
+      "symbol": "BNB Standa",
+      "name": "bnc\u7684\u65b0\u540d\u5b57",
+      "token_address": "0x0f79a561aa180fa45244c2258d20341716577777",
+      "pool_address": "0xe46a524cdf16a33f8c207c77a6fcc4748ac109a7",
+      "reserve_usd": 37977.5303,
+      "volume_24h_usd": 26879.3247159833,
+      "price_usd": 0.000144521664906577,
+      "created_at": "2026-10-26T23:02:45Z",
+      "age_hours": 0.07,
+      "network": "bsc",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x0f79a561aa180fa45244c2258d20341716577777&chainID=56"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24BNB%20Standa%20OR%200x0f79a561aa180fa45244c2258d20341716577777&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/bsc/0xe46a524cdf16a33f8c207c77a6fcc4748ac109a7",
+        "explorer": "https://bscscan.com/token/0x0f79a561aa180fa45244c2258d20341716577777"
+      }
+    },
+    {
+      "symbol": "IVT",
+      "name": "Imperial Voyage Throne",
+      "token_address": "0xb1e67003d06fffe5da239f9ef537626605083a51",
+      "pool_address": "0x24c3f0e50195d1690adf7fce3a362d3d351c3724",
+      "reserve_usd": 19377.787,
+      "volume_24h_usd": 2898.4492293405,
+      "price_usd": 1.64227339582889e-11,
+      "created_at": "2026-10-26T22:34:59Z",
+      "age_hours": 0.54,
+      "network": "eth",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24IVT%20OR%200xb1e67003d06fffe5da239f9ef537626605083a51&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0x24c3f0e50195d1690adf7fce3a362d3d351c3724",
+        "explorer": "https://etherscan.io/token/0xb1e67003d06fffe5da239f9ef537626605083a51"
+      }
+    },
+    {
+      "symbol": "NOMO",
+      "name": "NOMO",
+      "token_address": "0xafb96afebcdd3fe793c1bca2bd70eca675977777",
+      "pool_address": "0x557d0ad70da0ef6e2186703f09b5d93303282e11",
+      "reserve_usd": 17714.2294,
+      "volume_24h_usd": 23107.3552304636,
+      "price_usd": 9.33223891510472e-05,
+      "created_at": "2026-10-26T23:02:50Z",
+      "age_hours": 0.07,
+      "network": "bsc",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xafb96afebcdd3fe793c1bca2bd70eca675977777&chainID=56"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24NOMO%20OR%200xafb96afebcdd3fe793c1bca2bd70eca675977777&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/bsc/0x557d0ad70da0ef6e2186703f09b5d93303282e11",
+        "explorer": "https://bscscan.com/token/0xafb96afebcdd3fe793c1bca2bd70eca675977777"
+      }
+    },
+    {
+      "symbol": "META",
+      "name": "Meta Platforms, Inc.",
+      "token_address": "0x9114a3e4dc49b5cd420432e0c14cba7152e3eefe",
+      "pool_address": "0x0e18f98e981b0608cda1f375fc2e21dd9aeddaff",
+      "reserve_usd": 16671.8615,
+      "volume_24h_usd": 3172.0487835466,
+      "price_usd": 1.70002137994817e-11,
+      "created_at": "2026-10-26T22:35:59Z",
+      "age_hours": 0.52,
+      "network": "eth",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24META%20OR%200x9114a3e4dc49b5cd420432e0c14cba7152e3eefe&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0x0e18f98e981b0608cda1f375fc2e21dd9aeddaff",
+        "explorer": "https://etherscan.io/token/0x9114a3e4dc49b5cd420432e0c14cba7152e3eefe"
+      }
+    },
+    {
+      "symbol": "BNB Standa",
+      "name": "bnc\u7684\u65b0\u540d\u5b57",
+      "token_address": "0xa505e52fcd7bafad92f81e224adfc846639f7777",
+      "pool_address": "0x4b350d28a5bdb47893b9d155134527e060ee8477",
+      "reserve_usd": 13819.4125,
+      "volume_24h_usd": 6768.5581191424,
+      "price_usd": 5.47439852072374e-05,
+      "created_at": "2026-10-26T23:04:26Z",
       "age_hours": 0.05,
       "network": "bsc",
       "website": null,
@@ -98,123 +233,42 @@
       "description": null,
       "honeypot": {
         "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xafa303abd42ecde55bd537961ccf9faf878c7777&chainID=56"
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xa505e52fcd7bafad92f81e224adfc846639f7777&chainID=56"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24Sojo%20OR%200xafa303abd42ecde55bd537961ccf9faf878c7777&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24BNB%20Standa%20OR%200xa505e52fcd7bafad92f81e224adfc846639f7777&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0xe3bb545a24c03e89aa73a5e23306c6aaf1118e5e",
-        "explorer": "https://bscscan.com/token/0xafa303abd42ecde55bd537961ccf9faf878c7777"
+        "dexscreener": "https://dexscreener.com/bsc/0x4b350d28a5bdb47893b9d155134527e060ee8477",
+        "explorer": "https://bscscan.com/token/0xa505e52fcd7bafad92f81e224adfc846639f7777"
       }
     },
     {
-      "symbol": "DREAD",
-      "name": "DREADPOOL",
-      "token_address": "0x2416406d168878659f920c27db3a229901b763b1",
-      "pool_address": "0x1582fc3e9d348a0805710f97022ee04bc04584c12d5402e84d386e7f48a92807",
-      "reserve_usd": 6793.4849,
-      "volume_24h_usd": 1057.0934322,
-      "price_usd": 7.39740555157177e-06,
-      "created_at": "2026-10-26T18:59:35Z",
-      "age_hours": 0.05,
-      "network": "eth",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x2416406d168878659f920c27db3a229901b763b1&chainID=1"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24DREAD%20OR%200x2416406d168878659f920c27db3a229901b763b1&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/eth/0x1582fc3e9d348a0805710f97022ee04bc04584c12d5402e84d386e7f48a92807",
-        "explorer": "https://etherscan.io/token/0x2416406d168878659f920c27db3a229901b763b1"
-      }
-    },
-    {
-      "symbol": "ROFL",
-      "name": "ROFL",
-      "token_address": "2HwvjgGqqjzJwM5cXXMpK4c7pGz7n5DTKN63kcQYpump",
-      "pool_address": "Aqz3oHdFjo2Bmfoc9skyUWkRzkyYdw1ngMFveyPY5McU",
-      "reserve_usd": 6513.1673,
-      "volume_24h_usd": 3432.0861077959,
-      "price_usd": 6.938136785051103e-06,
-      "created_at": "2026-10-26T19:00:58Z",
-      "age_hours": 0.03,
-      "network": "solana",
-      "website": "https://www.roflmeme.fun",
-      "twitter_handle": "roflmeme_sol",
-      "description": "Deployed using https://j7tracker.io",
-      "honeypot": {
-        "status": "not_supported",
-        "detail": "solana not supported by this honeypot check (EVM-only)"
-      },
-      "links": {
-        "x_link": "https://x.com/roflmeme_sol",
-        "x_link_is_self_reported": true,
-        "website": "https://www.roflmeme.fun",
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/solana/Aqz3oHdFjo2Bmfoc9skyUWkRzkyYdw1ngMFveyPY5McU",
-        "explorer": "https://solscan.io/token/2HwvjgGqqjzJwM5cXXMpK4c7pGz7n5DTKN63kcQYpump"
-      }
-    },
-    {
-      "symbol": "HYSTEM",
-      "name": "Hentol Systems",
-      "token_address": "0xb200000000000000000000beeaddcccee2820e06",
-      "pool_address": "0x2149e0c90a75ad103dd76d97931c8a88135917135019ee388384385e388b2356",
-      "reserve_usd": 6320.9509,
-      "volume_24h_usd": 3778.0857549973,
-      "price_usd": 7.92395657929661e-06,
-      "created_at": "2026-10-26T18:50:37Z",
+      "symbol": "CHUBBY",
+      "name": "Chubby",
+      "token_address": "0x00d0a0e5c61cf8bf639735a214e27a7a83f440eb",
+      "pool_address": "0x5b854afc80c7f841b74b568aed290bdac5838b99",
+      "reserve_usd": 9241.0391,
+      "volume_24h_usd": 1734.5303158632,
+      "price_usd": 1.05167999853012e-06,
+      "created_at": "2026-10-26T22:55:23Z",
       "age_hours": 0.2,
       "network": "base",
       "website": null,
       "twitter_handle": null,
       "description": null,
       "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xb200000000000000000000beeaddcccee2820e06&chainID=8453"
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24HYSTEM%20OR%200xb200000000000000000000beeaddcccee2820e06&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24CHUBBY%20OR%200x00d0a0e5c61cf8bf639735a214e27a7a83f440eb&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0x2149e0c90a75ad103dd76d97931c8a88135917135019ee388384385e388b2356",
-        "explorer": "https://basescan.org/token/0xb200000000000000000000beeaddcccee2820e06"
-      }
-    },
-    {
-      "symbol": "HORNY",
-      "name": "HORNY",
-      "token_address": "GHy2pJSHqBxYo7oqLqbmzx3vKuXAkSkDVyboJuTWpump",
-      "pool_address": "D4iYKK3xCbyB3KDWPJMGTALLin4Kjz71yyzn7SoJNQVX",
-      "reserve_usd": 6109.4903,
-      "volume_24h_usd": 22639.8988066679,
-      "price_usd": 7.46109343518876e-06,
-      "created_at": "2026-10-26T19:00:52Z",
-      "age_hours": 0.03,
-      "network": "solana",
-      "website": "https://x.com/i/communities/2039426914579079285",
-      "twitter_handle": "Vibez__Crypto/status/2114794376970785126",
-      "description": "Deployed using https://j7tracker.io",
-      "honeypot": {
-        "status": "not_supported",
-        "detail": "solana not supported by this honeypot check (EVM-only)"
-      },
-      "links": {
-        "x_link": "https://x.com/Vibez__Crypto/status/2114794376970785126",
-        "x_link_is_self_reported": true,
-        "website": "https://x.com/i/communities/2039426914579079285",
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/solana/D4iYKK3xCbyB3KDWPJMGTALLin4Kjz71yyzn7SoJNQVX",
-        "explorer": "https://solscan.io/token/GHy2pJSHqBxYo7oqLqbmzx3vKuXAkSkDVyboJuTWpump"
+        "dexscreener": "https://dexscreener.com/base/0x5b854afc80c7f841b74b568aed290bdac5838b99",
+        "explorer": "https://basescan.org/token/0x00d0a0e5c61cf8bf639735a214e27a7a83f440eb"
       }
     }
   ]
