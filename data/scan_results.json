@@ -1,70 +1,70 @@
 {
-  "generated_at": "2026-10-28T02:16:19.710127",
+  "generated_at": "2026-10-28T08:52:28.902349",
   "candidates": [
     {
-      "symbol": "USDF",
-      "name": "United States Dividend Fund",
-      "token_address": "0xf6eee1f8766325c1cbcb039e37019486ec4645c5",
-      "pool_address": "0x336fdcba0c5add9aa457613816514291119dd0c1645bac5e46a4a2111e7a9173",
-      "reserve_usd": 2404246.7048,
-      "volume_24h_usd": 906743.929206956,
-      "price_usd": 0.386421072801153,
-      "created_at": "2026-10-28T02:12:59Z",
-      "age_hours": 0.04,
+      "symbol": "SOFIon",
+      "name": "SoFi Technologies (Ondo Tokenized)",
+      "token_address": "0x9f2e3eb0160117c56b07652fe66a08a48b5bd7b5",
+      "pool_address": "0x5b6f41182604d99436650230b216025886d5efb9",
+      "reserve_usd": 704100.9321,
+      "volume_24h_usd": 18593.3303820906,
+      "price_usd": 16.6180668389479,
+      "created_at": "2026-10-28T08:03:59Z",
+      "age_hours": 0.8,
+      "network": "eth",
+      "website": "https://app.ondo.finance/assets/sofion",
+      "twitter_handle": "ondofinance",
+      "description": "SOFIon is the Ondo Tokenized version of SoFi Technologies, giving tokenholders economic exposure similar to holding SOFI and reinvesting any dividends. Ondo tokenized stocks enable non-US retail and institutional users around the world to instantly mint and redeem tokenized U.S. stocks and ETFs, 24 hours a day, five days a week with full access to traditional exchange liquidity. Additional restrictions apply. Learn more at ondo.finance/global-markets.",
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x9f2e3eb0160117c56b07652fe66a08a48b5bd7b5&chainID=1"
+      },
+      "links": {
+        "x_link": "https://x.com/ondofinance",
+        "x_link_is_self_reported": true,
+        "website": "https://app.ondo.finance/assets/sofion",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0x5b6f41182604d99436650230b216025886d5efb9",
+        "explorer": "https://etherscan.io/token/0x9f2e3eb0160117c56b07652fe66a08a48b5bd7b5"
+      }
+    },
+    {
+      "symbol": "MERCURY",
+      "name": "MercuryCoin",
+      "token_address": "0x4305a980f9b2bb1b60656445795cdb42327bcaaa",
+      "pool_address": "0xd4bb44eccce7d149a142b8f53ca334560aa350d3",
+      "reserve_usd": 73254.4462,
+      "volume_24h_usd": 1016.6485655487,
+      "price_usd": 3.9231624504338e-06,
+      "created_at": "2026-10-28T08:45:59Z",
+      "age_hours": 0.1,
       "network": "base",
       "website": null,
       "twitter_handle": null,
       "description": null,
       "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xf6eee1f8766325c1cbcb039e37019486ec4645c5&chainID=8453"
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24USDF%20OR%200xf6eee1f8766325c1cbcb039e37019486ec4645c5&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24MERCURY%20OR%200x4305a980f9b2bb1b60656445795cdb42327bcaaa&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0x336fdcba0c5add9aa457613816514291119dd0c1645bac5e46a4a2111e7a9173",
-        "explorer": "https://basescan.org/token/0xf6eee1f8766325c1cbcb039e37019486ec4645c5"
+        "dexscreener": "https://dexscreener.com/base/0xd4bb44eccce7d149a142b8f53ca334560aa350d3",
+        "explorer": "https://basescan.org/token/0x4305a980f9b2bb1b60656445795cdb42327bcaaa"
       }
     },
     {
-      "symbol": "CHSTAR",
-      "name": "Chekov Badge",
-      "token_address": "8hPrYgAgBgjNak5DzcA1s4H6aJWMUNPnuji5scneBAGS",
-      "pool_address": "BK1JvyvyjWC9sedsm7n3zhgkjw1WXXPSJevoRG9sqgJS",
-      "reserve_usd": 109525.6702,
-      "volume_24h_usd": 2392.279026526,
-      "price_usd": 0.06946533318574558,
-      "created_at": "2026-10-28T02:15:05Z",
-      "age_hours": 0.01,
-      "network": "solana",
-      "website": null,
-      "twitter_handle": null,
-      "description": "Walter Koenig, remembered for portraying Pavel Chekov in the original Star Trek television series, was reported to have died at age 90. Chekov Star Badge commemorates his enduring connection to science-fiction television.",
-      "honeypot": {
-        "status": "not_supported",
-        "detail": "solana not supported by this honeypot check (EVM-only)"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24CHSTAR%20OR%208hPrYgAgBgjNak5DzcA1s4H6aJWMUNPnuji5scneBAGS&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/solana/BK1JvyvyjWC9sedsm7n3zhgkjw1WXXPSJevoRG9sqgJS",
-        "explorer": "https://solscan.io/token/8hPrYgAgBgjNak5DzcA1s4H6aJWMUNPnuji5scneBAGS"
-      }
-    },
-    {
-      "symbol": "Particle",
-      "name": "Particle",
-      "token_address": "0x5c79313d62830dc71ae28b0c0282c4cff59d3658",
-      "pool_address": "0x597de914eae50bf8e387739ac8f863a3e3b90b6e",
-      "reserve_usd": 66536.334,
-      "volume_24h_usd": 24070.7041820486,
-      "price_usd": 0.000671723389536083,
-      "created_at": "2026-10-28T01:40:11Z",
-      "age_hours": 0.59,
+      "symbol": "ARROW",
+      "name": "Arrow",
+      "token_address": "0xae37649927605b730a93ff05ad310c88a46f901e",
+      "pool_address": "0xb5d051b7e7d1dbfc0722c447673da184f911eceb",
+      "reserve_usd": 49699.9448,
+      "volume_24h_usd": 31950.5562714118,
+      "price_usd": 0.000469909186427425,
+      "created_at": "2026-10-28T08:10:47Z",
+      "age_hours": 0.68,
       "network": "eth",
       "website": null,
       "twitter_handle": null,
@@ -74,131 +74,104 @@
         "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24Particle%20OR%200x5c79313d62830dc71ae28b0c0282c4cff59d3658&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24ARROW%20OR%200xae37649927605b730a93ff05ad310c88a46f901e&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/eth/0x597de914eae50bf8e387739ac8f863a3e3b90b6e",
-        "explorer": "https://etherscan.io/token/0x5c79313d62830dc71ae28b0c0282c4cff59d3658"
+        "dexscreener": "https://dexscreener.com/eth/0xb5d051b7e7d1dbfc0722c447673da184f911eceb",
+        "explorer": "https://etherscan.io/token/0xae37649927605b730a93ff05ad310c88a46f901e"
       }
     },
     {
-      "symbol": "C",
-      "name": "Charity",
-      "token_address": "0xbafeac56de69e10907d1e3b202d656a21cd97777",
-      "pool_address": "0x98efa56f6b49f094aecf70ac04465185b8a3cf61",
-      "reserve_usd": 40432.5438,
-      "volume_24h_usd": 32793.0174762638,
-      "price_usd": 0.000151282289372198,
-      "created_at": "2026-10-28T02:06:51Z",
-      "age_hours": 0.14,
+      "symbol": "JOCKEY",
+      "name": "Chicken Jockey",
+      "token_address": "0x6e8e421fe33491742182cd011eda8d81084bb351",
+      "pool_address": "0x85999a2376ec79ad21bd9792cbc06d630e025b61",
+      "reserve_usd": 37557.6935,
+      "volume_24h_usd": 28793.3033568523,
+      "price_usd": 0.000131953024008818,
+      "created_at": "2026-10-28T08:45:26Z",
+      "age_hours": 0.11,
       "network": "bsc",
       "website": null,
       "twitter_handle": null,
       "description": null,
       "honeypot": {
         "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xbafeac56de69e10907d1e3b202d656a21cd97777&chainID=56"
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x6e8e421fe33491742182cd011eda8d81084bb351&chainID=56"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24C%20OR%200xbafeac56de69e10907d1e3b202d656a21cd97777&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24JOCKEY%20OR%200x6e8e421fe33491742182cd011eda8d81084bb351&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0x98efa56f6b49f094aecf70ac04465185b8a3cf61",
-        "explorer": "https://bscscan.com/token/0xbafeac56de69e10907d1e3b202d656a21cd97777"
+        "dexscreener": "https://dexscreener.com/bsc/0x85999a2376ec79ad21bd9792cbc06d630e025b61",
+        "explorer": "https://bscscan.com/token/0x6e8e421fe33491742182cd011eda8d81084bb351"
       }
     },
     {
-      "symbol": "CDC",
-      "name": "Cyber Dog Capital",
-      "token_address": "0x2c207a495c110ae0e478f36b9b91224bcc33be2b",
-      "pool_address": "0x83c87c7ee0add98fa2d1ed5adf36257921a966d9",
-      "reserve_usd": 24631.2074,
-      "volume_24h_usd": 1925.2948147439,
-      "price_usd": 2.47505317006713e-11,
-      "created_at": "2026-10-28T01:58:59Z",
-      "age_hours": 0.27,
-      "network": "eth",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "checked_ok",
-        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24CDC%20OR%200x2c207a495c110ae0e478f36b9b91224bcc33be2b&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/eth/0x83c87c7ee0add98fa2d1ed5adf36257921a966d9",
-        "explorer": "https://etherscan.io/token/0x2c207a495c110ae0e478f36b9b91224bcc33be2b"
-      }
-    },
-    {
-      "symbol": "WBD",
-      "name": "Warner Bros. Discovery, Inc.",
-      "token_address": "0x325a3fd629989898cb244599bca62c747fa793cf",
-      "pool_address": "0x3bae56e73335754475a4d19bc964f75c07c552db",
-      "reserve_usd": 19761.4537,
-      "volume_24h_usd": 4052.1551908523,
-      "price_usd": 1.69323182323444e-11,
-      "created_at": "2026-10-28T01:58:59Z",
-      "age_hours": 0.27,
-      "network": "eth",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "checked_ok",
-        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24WBD%20OR%200x325a3fd629989898cb244599bca62c747fa793cf&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/eth/0x3bae56e73335754475a4d19bc964f75c07c552db",
-        "explorer": "https://etherscan.io/token/0x325a3fd629989898cb244599bca62c747fa793cf"
-      }
-    },
-    {
-      "symbol": "PEPTARDIO",
-      "name": "Peptardio",
-      "token_address": "EwvNJZgwxKQdmdbBDSpg6NyH9SSNwnsTMYWSt1UmqNKa",
-      "pool_address": "HhAL7G5msnG3pRx5YxyRgQvFr1BJX79qsWVN7HznmB8x",
-      "reserve_usd": 19363.715,
-      "volume_24h_usd": 21012.3301334955,
-      "price_usd": 1.1252359601306093e-05,
-      "created_at": "2026-10-28T02:14:42Z",
+      "symbol": "DAYDREAM",
+      "name": "DAYDREAM",
+      "token_address": "HHYa8eqNp9QhZW1VWodA5xi6Axe9MU8dCnj6zQP4Kk7W",
+      "pool_address": "HMy8NGqhCxY7B8sgD8QfQJYxyJPnitUt9M358GZNw3yZ",
+      "reserve_usd": 20146.1687,
+      "volume_24h_usd": 9120.904441865,
+      "price_usd": 6.0616946397258084e-05,
+      "created_at": "2026-10-28T08:50:53Z",
       "age_hours": 0.01,
       "network": "solana",
-      "website": "https://retardioclassic.xyz",
-      "twitter_handle": "retardioclassic",
+      "website": "https://daydreamsol.pro",
+      "twitter_handle": "DAYDREAM_solana",
       "description": null,
       "honeypot": {
         "status": "not_supported",
         "detail": "solana not supported by this honeypot check (EVM-only)"
       },
       "links": {
-        "x_link": "https://x.com/retardioclassic",
+        "x_link": "https://x.com/DAYDREAM_solana",
         "x_link_is_self_reported": true,
-        "website": "https://retardioclassic.xyz",
+        "website": "https://daydreamsol.pro",
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/solana/HhAL7G5msnG3pRx5YxyRgQvFr1BJX79qsWVN7HznmB8x",
-        "explorer": "https://solscan.io/token/EwvNJZgwxKQdmdbBDSpg6NyH9SSNwnsTMYWSt1UmqNKa"
+        "dexscreener": "https://dexscreener.com/solana/HMy8NGqhCxY7B8sgD8QfQJYxyJPnitUt9M358GZNw3yZ",
+        "explorer": "https://solscan.io/token/HHYa8eqNp9QhZW1VWodA5xi6Axe9MU8dCnj6zQP4Kk7W"
       }
     },
     {
-      "symbol": "C",
-      "name": "Charity",
-      "token_address": "0x32b3f2d2fa8b8294a78268812558b7a5e3497777",
-      "pool_address": "0x757eacf6edb266972295dfa67ba38ba4a3bb6ba4",
-      "reserve_usd": 15066.2025,
-      "volume_24h_usd": 10984.3967533071,
-      "price_usd": 6.36410565528839e-05,
-      "created_at": "2026-10-28T02:10:43Z",
+      "symbol": "\u5f00\u8fd0",
+      "name": "\u5f00\u8fd0",
+      "token_address": "0xa9d8954f746bf0748da0095e057d89da666a5718",
+      "pool_address": "0x325eb3ca56bf5d409582ee135460281ea33a33c5",
+      "reserve_usd": 19487.9493,
+      "volume_24h_usd": 1643.146917397,
+      "price_usd": 5.99537743257805e-05,
+      "created_at": "2026-10-28T08:44:35Z",
+      "age_hours": 0.12,
+      "network": "bsc",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xa9d8954f746bf0748da0095e057d89da666a5718&chainID=56"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24%E5%BC%80%E8%BF%90%20OR%200xa9d8954f746bf0748da0095e057d89da666a5718&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/bsc/0x325eb3ca56bf5d409582ee135460281ea33a33c5",
+        "explorer": "https://bscscan.com/token/0xa9d8954f746bf0748da0095e057d89da666a5718"
+      }
+    },
+    {
+      "symbol": "BNQ",
+      "name": "BNQ GLOBAL",
+      "token_address": "0x6d0ab00e3ba3818a05271e5a8c6470ab22efb97d",
+      "pool_address": "0x09ef8ee2be19cccc86c8acdbd2c3b76d9b3c4f8f",
+      "reserve_usd": 17740.5362,
+      "volume_24h_usd": 1827.5506292321,
+      "price_usd": 9.61115496988002e-07,
+      "created_at": "2026-10-28T08:46:48Z",
       "age_hours": 0.08,
       "network": "bsc",
       "website": null,
@@ -206,26 +179,53 @@
       "description": null,
       "honeypot": {
         "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x32b3f2d2fa8b8294a78268812558b7a5e3497777&chainID=56"
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x6d0ab00e3ba3818a05271e5a8c6470ab22efb97d&chainID=56"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24C%20OR%200x32b3f2d2fa8b8294a78268812558b7a5e3497777&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24BNQ%20OR%200x6d0ab00e3ba3818a05271e5a8c6470ab22efb97d&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0x757eacf6edb266972295dfa67ba38ba4a3bb6ba4",
-        "explorer": "https://bscscan.com/token/0x32b3f2d2fa8b8294a78268812558b7a5e3497777"
+        "dexscreener": "https://dexscreener.com/bsc/0x09ef8ee2be19cccc86c8acdbd2c3b76d9b3c4f8f",
+        "explorer": "https://bscscan.com/token/0x6d0ab00e3ba3818a05271e5a8c6470ab22efb97d"
       }
     },
     {
-      "symbol": "\uac1c\ubbf8",
-      "name": "Ant Investors",
-      "token_address": "0xf3b2b19ee7189d6e03f1ccf570b2f3277f4d7777",
-      "pool_address": "0x404bd754b70b4fa90d71e696f450012d93e70ad0",
-      "reserve_usd": 14036.6599,
-      "volume_24h_usd": 13878.5842806453,
-      "price_usd": 2.53531438860067e-05,
-      "created_at": "2026-10-28T02:09:49Z",
+      "symbol": "BTW",
+      "name": "Bitway",
+      "token_address": "0xa805cf3f66cc09268104966f92757c7896d18768",
+      "pool_address": "0x39467fe3731252e4a59ba0c767b6240f9b23cb47",
+      "reserve_usd": 15917.3222,
+      "volume_24h_usd": 7958.79875083,
+      "price_usd": 3.58000637994216e-07,
+      "created_at": "2026-10-28T08:48:57Z",
+      "age_hours": 0.05,
+      "network": "bsc",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xa805cf3f66cc09268104966f92757c7896d18768&chainID=56"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24BTW%20OR%200xa805cf3f66cc09268104966f92757c7896d18768&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/bsc/0x39467fe3731252e4a59ba0c767b6240f9b23cb47",
+        "explorer": "https://bscscan.com/token/0xa805cf3f66cc09268104966f92757c7896d18768"
+      }
+    },
+    {
+      "symbol": "BUILDER",
+      "name": "CZ Builder",
+      "token_address": "0xc487bb4ea38893dac93ec55c1db3c4bfad3ce426",
+      "pool_address": "0x688cedecfb51414333ede6beaee72a238f751b21",
+      "reserve_usd": 12990.7399,
+      "volume_24h_usd": 115776.000935664,
+      "price_usd": 7.55721197416788e-07,
+      "created_at": "2026-10-28T08:46:33Z",
       "age_hours": 0.09,
       "network": "bsc",
       "website": null,
@@ -233,108 +233,27 @@
       "description": null,
       "honeypot": {
         "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xf3b2b19ee7189d6e03f1ccf570b2f3277f4d7777&chainID=56"
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xc487bb4ea38893dac93ec55c1db3c4bfad3ce426&chainID=56"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24%EA%B0%9C%EB%AF%B8%20OR%200xf3b2b19ee7189d6e03f1ccf570b2f3277f4d7777&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24BUILDER%20OR%200xc487bb4ea38893dac93ec55c1db3c4bfad3ce426&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0x404bd754b70b4fa90d71e696f450012d93e70ad0",
-        "explorer": "https://bscscan.com/token/0xf3b2b19ee7189d6e03f1ccf570b2f3277f4d7777"
-      }
-    },
-    {
-      "symbol": "clank",
-      "name": "clank",
-      "token_address": "0xb200000000000000000000256a11e5354c26e393",
-      "pool_address": "0xa0da21739e5f0940ad9d3c89bf4b6faca7bba3f008895d5af87c85898d09eebe",
-      "reserve_usd": 10897.6181,
-      "volume_24h_usd": 15073.6355104609,
-      "price_usd": 1.66661129815415e-05,
-      "created_at": "2026-10-28T01:55:49Z",
-      "age_hours": 0.33,
-      "network": "base",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xb200000000000000000000256a11e5354c26e393&chainID=8453"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24clank%20OR%200xb200000000000000000000256a11e5354c26e393&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0xa0da21739e5f0940ad9d3c89bf4b6faca7bba3f008895d5af87c85898d09eebe",
-        "explorer": "https://basescan.org/token/0xb200000000000000000000256a11e5354c26e393"
-      }
-    },
-    {
-      "symbol": "SPACEX",
-      "name": "SpaceX",
-      "token_address": "0xd3a89a7b93a92f9e2121af994a5201b08a817b1d",
-      "pool_address": "0x375dc68199cd813830924369fefb1bdee1ac5b18",
-      "reserve_usd": 10800.1435,
-      "volume_24h_usd": 2446.597132482,
-      "price_usd": 1.47646104720892e-06,
-      "created_at": "2026-10-28T02:07:15Z",
-      "age_hours": 0.14,
-      "network": "base",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "checked_ok",
-        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24SPACEX%20OR%200xd3a89a7b93a92f9e2121af994a5201b08a817b1d&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0x375dc68199cd813830924369fefb1bdee1ac5b18",
-        "explorer": "https://basescan.org/token/0xd3a89a7b93a92f9e2121af994a5201b08a817b1d"
-      }
-    },
-    {
-      "symbol": "DIRECTOR",
-      "name": "Director",
-      "token_address": "0x77a1966eae607d22f62b396cbe629c38cb0b7777",
-      "pool_address": "0xe3f71f6a11a4c4229888bc98f401113b8504f4b8",
-      "reserve_usd": 10429.4436,
-      "volume_24h_usd": 1208.4413058255,
-      "price_usd": 3.65697016488949e-05,
-      "created_at": "2026-10-28T02:14:32Z",
-      "age_hours": 0.02,
-      "network": "bsc",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x77a1966eae607d22f62b396cbe629c38cb0b7777&chainID=56"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24DIRECTOR%20OR%200x77a1966eae607d22f62b396cbe629c38cb0b7777&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0xe3f71f6a11a4c4229888bc98f401113b8504f4b8",
-        "explorer": "https://bscscan.com/token/0x77a1966eae607d22f62b396cbe629c38cb0b7777"
+        "dexscreener": "https://dexscreener.com/bsc/0x688cedecfb51414333ede6beaee72a238f751b21",
+        "explorer": "https://bscscan.com/token/0xc487bb4ea38893dac93ec55c1db3c4bfad3ce426"
       }
     },
     {
       "symbol": "CHUBBY",
       "name": "Chubby",
-      "token_address": "0x903e44a9c4f0f5dfaec123279531c8466f608974",
-      "pool_address": "0xfba586edae89bb7714282909e177cec5c48e9e7a",
-      "reserve_usd": 9698.2562,
-      "volume_24h_usd": 1797.3790221112,
-      "price_usd": 1.10990686530919e-06,
-      "created_at": "2026-10-28T02:01:35Z",
-      "age_hours": 0.23,
+      "token_address": "0xda7c2149a2b245f4b6a382e75bfadcccdcf641e9",
+      "pool_address": "0x7c3d196ceb31659e3588256c3baec4d7eb0d837a",
+      "reserve_usd": 10471.8392,
+      "volume_24h_usd": 2041.2236254802,
+      "price_usd": 1.34005952270369e-06,
+      "created_at": "2026-10-28T08:43:49Z",
+      "age_hours": 0.13,
       "network": "base",
       "website": null,
       "twitter_handle": null,
@@ -344,23 +263,50 @@
         "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24CHUBBY%20OR%200x903e44a9c4f0f5dfaec123279531c8466f608974&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24CHUBBY%20OR%200xda7c2149a2b245f4b6a382e75bfadcccdcf641e9&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0xfba586edae89bb7714282909e177cec5c48e9e7a",
-        "explorer": "https://basescan.org/token/0x903e44a9c4f0f5dfaec123279531c8466f608974"
+        "dexscreener": "https://dexscreener.com/base/0x7c3d196ceb31659e3588256c3baec4d7eb0d837a",
+        "explorer": "https://basescan.org/token/0xda7c2149a2b245f4b6a382e75bfadcccdcf641e9"
+      }
+    },
+    {
+      "symbol": "LAPTOP",
+      "name": "LAPTOP",
+      "token_address": "0xb5f3363d04c2d3d6afa1eca83d37b6f652939e04",
+      "pool_address": "0x4c56528dbfe7ee8c611527b2125dda527ad0aa27",
+      "reserve_usd": 9416.7767,
+      "volume_24h_usd": 1376.3550238102,
+      "price_usd": 1.04340118815824e-06,
+      "created_at": "2026-10-28T08:40:07Z",
+      "age_hours": 0.19,
+      "network": "base",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24LAPTOP%20OR%200xb5f3363d04c2d3d6afa1eca83d37b6f652939e04&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/base/0x4c56528dbfe7ee8c611527b2125dda527ad0aa27",
+        "explorer": "https://basescan.org/token/0xb5f3363d04c2d3d6afa1eca83d37b6f652939e04"
       }
     },
     {
       "symbol": "SPACEX",
       "name": "SpaceX",
-      "token_address": "0xb300b63df7927fa120093b9bf8b65e843c53ec77",
-      "pool_address": "0x7c29350ece0bb67ff49fd0e8702dea28ee852ee3",
-      "reserve_usd": 9084.4485,
-      "volume_24h_usd": 1070.3423418511,
-      "price_usd": 9.79696033222555e-07,
-      "created_at": "2026-10-28T02:05:39Z",
+      "token_address": "0x535fcf5246fe0cff6e2621d8c4201ab04a4f61f6",
+      "pool_address": "0x2d98fc10604d11cd696ea6033479370d8c9ec3f0",
+      "reserve_usd": 8838.7371,
+      "volume_24h_usd": 1025.9491971066,
+      "price_usd": 9.20109628729569e-07,
+      "created_at": "2026-10-28T08:42:11Z",
       "age_hours": 0.16,
       "network": "base",
       "website": null,
@@ -371,24 +317,24 @@
         "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24SPACEX%20OR%200xb300b63df7927fa120093b9bf8b65e843c53ec77&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24SPACEX%20OR%200x535fcf5246fe0cff6e2621d8c4201ab04a4f61f6&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0x7c29350ece0bb67ff49fd0e8702dea28ee852ee3",
-        "explorer": "https://basescan.org/token/0xb300b63df7927fa120093b9bf8b65e843c53ec77"
+        "dexscreener": "https://dexscreener.com/base/0x2d98fc10604d11cd696ea6033479370d8c9ec3f0",
+        "explorer": "https://basescan.org/token/0x535fcf5246fe0cff6e2621d8c4201ab04a4f61f6"
       }
     },
     {
-      "symbol": "CHUBBY",
-      "name": "Chubby",
-      "token_address": "0x52cc6fc2a81d46d7060c5dce2964d93525808c78",
-      "pool_address": "0xefd8251262a62c3d80c3fe2e31c4e0c3b32b7938",
-      "reserve_usd": 8119.1199,
-      "volume_24h_usd": 1395.2643775614,
-      "price_usd": 1.00465026315835e-06,
-      "created_at": "2026-10-28T02:10:31Z",
-      "age_hours": 0.08,
+      "symbol": "MEOW",
+      "name": "MeowCoin",
+      "token_address": "0x7ad50201d76a66198c026e85be969e804462b0bc",
+      "pool_address": "0x1f65c77c52b4bda769792b9127256dda880e2693",
+      "reserve_usd": 8515.4885,
+      "volume_24h_usd": 1680.3234654143,
+      "price_usd": 1.13898235979865e-06,
+      "created_at": "2026-10-28T08:41:17Z",
+      "age_hours": 0.17,
       "network": "base",
       "website": null,
       "twitter_handle": null,
@@ -398,66 +344,66 @@
         "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24CHUBBY%20OR%200x52cc6fc2a81d46d7060c5dce2964d93525808c78&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24MEOW%20OR%200x7ad50201d76a66198c026e85be969e804462b0bc&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0xefd8251262a62c3d80c3fe2e31c4e0c3b32b7938",
-        "explorer": "https://basescan.org/token/0x52cc6fc2a81d46d7060c5dce2964d93525808c78"
+        "dexscreener": "https://dexscreener.com/base/0x1f65c77c52b4bda769792b9127256dda880e2693",
+        "explorer": "https://basescan.org/token/0x7ad50201d76a66198c026e85be969e804462b0bc"
       }
     },
     {
-      "symbol": "SUP",
-      "name": "Superfluid Token",
-      "token_address": "0x2b561eadedc71cdaeccb6f5bf0e0d0f427c62016",
-      "pool_address": "0x37095417ff00481b0445fb91afbf17edbc06602ce9fa1f95d920ecf26fd13492",
-      "reserve_usd": 6039.0908,
-      "volume_24h_usd": 5351.974974378,
-      "price_usd": 1.43998523338306e-07,
-      "created_at": "2026-10-28T02:02:51Z",
-      "age_hours": 0.21,
+      "symbol": "Trencher",
+      "name": "The Trencher",
+      "token_address": "7vKHN8HCmQdyViCK3mueNZbqJxrdiVkMZG3f44hppump",
+      "pool_address": "D2rrg12BGVHgLDt6FNLK9D1KXTGqc8bYvtbR6CZTZGa6",
+      "reserve_usd": 6287.3084,
+      "volume_24h_usd": 12643.4454716459,
+      "price_usd": 1.1111879444240656e-05,
+      "created_at": "2026-10-28T08:50:33Z",
+      "age_hours": 0.02,
+      "network": "solana",
+      "website": "https://www.instagram.com/p/DfCB4ybTdLm",
+      "twitter_handle": "newpa1rs/status/2115365374971842859",
+      "description": "Deployed using https://j7tracker.io",
+      "honeypot": {
+        "status": "not_supported",
+        "detail": "solana not supported by this honeypot check (EVM-only)"
+      },
+      "links": {
+        "x_link": "https://x.com/newpa1rs/status/2115365374971842859",
+        "x_link_is_self_reported": true,
+        "website": "https://www.instagram.com/p/DfCB4ybTdLm",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/solana/D2rrg12BGVHgLDt6FNLK9D1KXTGqc8bYvtbR6CZTZGa6",
+        "explorer": "https://solscan.io/token/7vKHN8HCmQdyViCK3mueNZbqJxrdiVkMZG3f44hppump"
+      }
+    },
+    {
+      "symbol": "Gitbank",
+      "name": "Gitbank",
+      "token_address": "0x36bb3849f1946166d42098ba0ddbd8f38106b81f",
+      "pool_address": "0x5e042673419900dc1f1dc6b78715da7fe2d95cc05996e50fd60c86ac9650d508",
+      "reserve_usd": 6084.77,
+      "volume_24h_usd": 1266.199909812,
+      "price_usd": 1.88851239918823e-06,
+      "created_at": "2026-10-28T08:42:07Z",
+      "age_hours": 0.16,
       "network": "base",
       "website": null,
       "twitter_handle": null,
       "description": null,
       "honeypot": {
         "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x2b561eadedc71cdaeccb6f5bf0e0d0f427c62016&chainID=8453"
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x36bb3849f1946166d42098ba0ddbd8f38106b81f&chainID=8453"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24SUP%20OR%200x2b561eadedc71cdaeccb6f5bf0e0d0f427c62016&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24Gitbank%20OR%200x36bb3849f1946166d42098ba0ddbd8f38106b81f&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0x37095417ff00481b0445fb91afbf17edbc06602ce9fa1f95d920ecf26fd13492",
-        "explorer": "https://basescan.org/token/0x2b561eadedc71cdaeccb6f5bf0e0d0f427c62016"
-      }
-    },
-    {
-      "symbol": "YRA",
-      "name": "YRA",
-      "token_address": "9ZrkYej49GaTZ6Sm3PeMsMaamAYqaNVD6kow2bXcpump",
-      "pool_address": "5X3nke18owgYHz99dMGbTABrXg4ZiCvbgAXKuG5LnYjb",
-      "reserve_usd": 5057.8308,
-      "volume_24h_usd": 1361.9362922492,
-      "price_usd": 9.320815013407175e-06,
-      "created_at": "2026-10-28T02:14:52Z",
-      "age_hours": 0.01,
-      "network": "solana",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "not_supported",
-        "detail": "solana not supported by this honeypot check (EVM-only)"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24YRA%20OR%209ZrkYej49GaTZ6Sm3PeMsMaamAYqaNVD6kow2bXcpump&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/solana/5X3nke18owgYHz99dMGbTABrXg4ZiCvbgAXKuG5LnYjb",
-        "explorer": "https://solscan.io/token/9ZrkYej49GaTZ6Sm3PeMsMaamAYqaNVD6kow2bXcpump"
+        "dexscreener": "https://dexscreener.com/base/0x5e042673419900dc1f1dc6b78715da7fe2d95cc05996e50fd60c86ac9650d508",
+        "explorer": "https://basescan.org/token/0x36bb3849f1946166d42098ba0ddbd8f38106b81f"
       }
     }
   ]
