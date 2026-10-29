@@ -1,258 +1,69 @@
 {
-  "generated_at": "2026-10-29T19:14:28.962285",
+  "generated_at": "2026-10-29T23:21:27.238810",
   "candidates": [
     {
-      "symbol": "WEB",
-      "name": "Web3Swap",
-      "token_address": "0xe084452da388f5ac9e01e260cf8a455ff24ea8ff",
-      "pool_address": "0x4fd1f0b5e4fc82a549adb580c99cb72917728643",
-      "reserve_usd": 132232.8944,
-      "volume_24h_usd": 98535.7550071892,
-      "price_usd": 0.000647506381728007,
-      "created_at": "2026-10-29T19:03:47Z",
-      "age_hours": 0.17,
-      "network": "bsc",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xe084452da388f5ac9e01e260cf8a455ff24ea8ff&chainID=56"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24WEB%20OR%200xe084452da388f5ac9e01e260cf8a455ff24ea8ff&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0x4fd1f0b5e4fc82a549adb580c99cb72917728643",
-        "explorer": "https://bscscan.com/token/0xe084452da388f5ac9e01e260cf8a455ff24ea8ff"
-      }
-    },
-    {
-      "symbol": "PRNTNBD",
-      "name": "Print Bid",
-      "token_address": "0x3337dabb067977e814ea4930d3ddb067a6d64cc0",
-      "pool_address": "0x479da67b4e94db526dee93bf339cca1a383bf3c8",
-      "reserve_usd": 79021.6746,
-      "volume_24h_usd": 4612.0328205257,
-      "price_usd": 9.70156395002855e-06,
-      "created_at": "2026-10-29T18:47:47Z",
-      "age_hours": 0.43,
-      "network": "base",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
+      "symbol": "ENA",
+      "name": "ENA",
+      "token_address": "0x57e114b691db790c35207b2e685d4a43181e6061",
+      "pool_address": "0xdb411ebb1c98fb4aa94b65981431aaef9b6f4dedfd92f9f3e1d2b1258d606e78",
+      "reserve_usd": 684429.7539,
+      "volume_24h_usd": 1349.1787288741,
+      "price_usd": 0.17118060825018,
+      "created_at": "2026-10-29T22:54:47Z",
+      "age_hours": 0.42,
+      "network": "eth",
+      "website": "https://www.ethena.fi",
+      "twitter_handle": "ethena_labs",
+      "description": "",
       "honeypot": {
         "status": "checked_ok",
         "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24PRNTNBD%20OR%200x3337dabb067977e814ea4930d3ddb067a6d64cc0&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0x479da67b4e94db526dee93bf339cca1a383bf3c8",
-        "explorer": "https://basescan.org/token/0x3337dabb067977e814ea4930d3ddb067a6d64cc0"
-      }
-    },
-    {
-      "symbol": "AIBO",
-      "name": "AIBO DOG",
-      "token_address": "0x9870b6fca768c7157de7cb86de599d6168cd7777",
-      "pool_address": "0xbb0bac0cab7f8df6714e0259cf2bc220dc31b9f2",
-      "reserve_usd": 36924.4751,
-      "volume_24h_usd": 31151.3847394931,
-      "price_usd": 0.000129222446424051,
-      "created_at": "2026-10-29T19:05:29Z",
-      "age_hours": 0.14,
-      "network": "bsc",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x9870b6fca768c7157de7cb86de599d6168cd7777&chainID=56"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24AIBO%20OR%200x9870b6fca768c7157de7cb86de599d6168cd7777&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0xbb0bac0cab7f8df6714e0259cf2bc220dc31b9f2",
-        "explorer": "https://bscscan.com/token/0x9870b6fca768c7157de7cb86de599d6168cd7777"
-      }
-    },
-    {
-      "symbol": "\u7948\u798f\u94fe\ud83c\udfc6",
-      "name": "\u7948\u798f\u94fe\ud83c\udfc6",
-      "token_address": "0x54930893d4affca055d31aac5567c981774f1dce",
-      "pool_address": "0x78f8dcc59ea6f3e228a1cccfa2911ace4aad3d74",
-      "reserve_usd": 36095.1934,
-      "volume_24h_usd": 19164.0608762263,
-      "price_usd": 0.000127846395818477,
-      "created_at": "2026-10-29T19:09:26Z",
-      "age_hours": 0.07,
-      "network": "bsc",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x54930893d4affca055d31aac5567c981774f1dce&chainID=56"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24%E7%A5%88%E7%A6%8F%E9%93%BE%F0%9F%8F%86%20OR%200x54930893d4affca055d31aac5567c981774f1dce&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0x78f8dcc59ea6f3e228a1cccfa2911ace4aad3d74",
-        "explorer": "https://bscscan.com/token/0x54930893d4affca055d31aac5567c981774f1dce"
-      }
-    },
-    {
-      "symbol": "Hypurr",
-      "name": "Hypurr",
-      "token_address": "0xa6fb238c88a25a0db9c1b01385ad841f98df7777",
-      "pool_address": "0x513f455034cf1ec8ba14405e181724d87a263117",
-      "reserve_usd": 23441.3814,
-      "volume_24h_usd": 30602.2895566436,
-      "price_usd": 0.000151409418437787,
-      "created_at": "2026-10-29T19:04:44Z",
-      "age_hours": 0.15,
-      "network": "bsc",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xa6fb238c88a25a0db9c1b01385ad841f98df7777&chainID=56"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24Hypurr%20OR%200xa6fb238c88a25a0db9c1b01385ad841f98df7777&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0x513f455034cf1ec8ba14405e181724d87a263117",
-        "explorer": "https://bscscan.com/token/0xa6fb238c88a25a0db9c1b01385ad841f98df7777"
-      }
-    },
-    {
-      "symbol": "ENCIO",
-      "name": "Encio Fi",
-      "token_address": "0x80655deb8ca4deff5b074594dda648c01835fee1",
-      "pool_address": "0xdbe8390e758ebb2cea47436ce07ef5341f3277455e499ae4591ee1229b38dcb1",
-      "reserve_usd": 20801.3797,
-      "volume_24h_usd": 2135.5774899948,
-      "price_usd": 2.15889478406929e-05,
-      "created_at": "2026-10-29T19:09:37Z",
-      "age_hours": 0.07,
-      "network": "base",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x80655deb8ca4deff5b074594dda648c01835fee1&chainID=8453"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24ENCIO%20OR%200x80655deb8ca4deff5b074594dda648c01835fee1&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0xdbe8390e758ebb2cea47436ce07ef5341f3277455e499ae4591ee1229b38dcb1",
-        "explorer": "https://basescan.org/token/0x80655deb8ca4deff5b074594dda648c01835fee1"
-      }
-    },
-    {
-      "symbol": "NVEC",
-      "name": "Neural Vector",
-      "token_address": "0x2bd2e6122601f296ba0fdeb65166b8dc48fdeba3",
-      "pool_address": "0xc7f5328d84cf03fcc09ac7fc3fabaf769183cf26b2285c3c1bf566201fa018af",
-      "reserve_usd": 17570.8573,
-      "volume_24h_usd": 1306.349524231,
-      "price_usd": 2.08214392915861e-07,
-      "created_at": "2026-10-29T18:56:41Z",
-      "age_hours": 0.28,
-      "network": "base",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x2bd2e6122601f296ba0fdeb65166b8dc48fdeba3&chainID=8453"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24NVEC%20OR%200x2bd2e6122601f296ba0fdeb65166b8dc48fdeba3&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0xc7f5328d84cf03fcc09ac7fc3fabaf769183cf26b2285c3c1bf566201fa018af",
-        "explorer": "https://basescan.org/token/0x2bd2e6122601f296ba0fdeb65166b8dc48fdeba3"
-      }
-    },
-    {
-      "symbol": "MKM",
-      "name": "Makmur",
-      "token_address": "0xcafb46804de7aa85d478a299035313b34882574a",
-      "pool_address": "0x19133e7fbbc48b73b033ea4e1f82459962498f29",
-      "reserve_usd": 17462.6667,
-      "volume_24h_usd": 1459.1557687062,
-      "price_usd": 9.75142999266804e-06,
-      "created_at": "2026-10-29T19:09:08Z",
-      "age_hours": 0.08,
-      "network": "bsc",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xcafb46804de7aa85d478a299035313b34882574a&chainID=56"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24MKM%20OR%200xcafb46804de7aa85d478a299035313b34882574a&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0x19133e7fbbc48b73b033ea4e1f82459962498f29",
-        "explorer": "https://bscscan.com/token/0xcafb46804de7aa85d478a299035313b34882574a"
-      }
-    },
-    {
-      "symbol": "Lily",
-      "name": "Lily AI",
-      "token_address": "8PLFUxaRXxzakrMXL7r47b7v3SaP79XVPv4fWXVupump",
-      "pool_address": "5MdLJuDYGoTfcCrh8Rft5TyEeVFAKiUMfJjzSA4EKPt5",
-      "reserve_usd": 13889.0364,
-      "volume_24h_usd": 4564.6799210428,
-      "price_usd": 3.485419231428494e-05,
-      "created_at": "2026-10-29T19:13:05Z",
-      "age_hours": 0.01,
-      "network": "solana",
-      "website": "https://otcdesks.cash/coin/5Yadgfu7LTzXLmrhaxPVPzBkjf6uY8XpkTd991Egpump",
-      "twitter_handle": "FearedBuck/status/2115882489701163258",
-      "description": null,
-      "honeypot": {
-        "status": "not_supported",
-        "detail": "solana not supported by this honeypot check (EVM-only)"
-      },
-      "links": {
-        "x_link": "https://x.com/FearedBuck/status/2115882489701163258",
+        "x_link": "https://x.com/ethena_labs",
         "x_link_is_self_reported": true,
-        "website": "https://otcdesks.cash/coin/5Yadgfu7LTzXLmrhaxPVPzBkjf6uY8XpkTd991Egpump",
+        "website": "https://www.ethena.fi",
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/solana/5MdLJuDYGoTfcCrh8Rft5TyEeVFAKiUMfJjzSA4EKPt5",
-        "explorer": "https://solscan.io/token/8PLFUxaRXxzakrMXL7r47b7v3SaP79XVPv4fWXVupump"
+        "dexscreener": "https://dexscreener.com/eth/0xdb411ebb1c98fb4aa94b65981431aaef9b6f4dedfd92f9f3e1d2b1258d606e78",
+        "explorer": "https://etherscan.io/token/0x57e114b691db790c35207b2e685d4a43181e6061"
       }
     },
     {
-      "symbol": "STINGRAY",
-      "name": "Toxic Reef Needle",
-      "token_address": "0x3c99e6628cb0f50baa4bb85a4e19c1ed72c4828a",
-      "pool_address": "0x69275757b35a4d07f011ed5560343793cb6df2a3",
-      "reserve_usd": 13555.4723,
-      "volume_24h_usd": 1508.3552142472,
-      "price_usd": 0.00780935897538684,
-      "created_at": "2026-10-29T19:05:56Z",
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0xbf6a27ba5743928b4c5070113cb52463ca6a6cba4f65e33089232995511eec8c",
+      "reserve_usd": 99122.9285,
+      "volume_24h_usd": 1505636.02848595,
+      "price_usd": 0.368033838119176,
+      "created_at": "2026-10-29T23:09:23Z",
+      "age_hours": 0.18,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xbf6a27ba5743928b4c5070113cb52463ca6a6cba4f65e33089232995511eec8c",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "SHIB",
+      "name": "ShibaSmart Plus",
+      "token_address": "0x8637a789974372a80a65901c82fb531298783780",
+      "pool_address": "0x8684e46edb64dca0fc080d94fe638e89bcc18db3",
+      "reserve_usd": 69971.635,
+      "volume_24h_usd": 44770.6172523842,
+      "price_usd": 0.000278134584767369,
+      "created_at": "2026-10-29T23:12:10Z",
       "age_hours": 0.13,
       "network": "bsc",
       "website": null,
@@ -260,28 +71,622 @@
       "description": null,
       "honeypot": {
         "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x3c99e6628cb0f50baa4bb85a4e19c1ed72c4828a&chainID=56"
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x8637a789974372a80a65901c82fb531298783780&chainID=56"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24STINGRAY%20OR%200x3c99e6628cb0f50baa4bb85a4e19c1ed72c4828a&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24SHIB%20OR%200x8637a789974372a80a65901c82fb531298783780&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0x69275757b35a4d07f011ed5560343793cb6df2a3",
-        "explorer": "https://bscscan.com/token/0x3c99e6628cb0f50baa4bb85a4e19c1ed72c4828a"
+        "dexscreener": "https://dexscreener.com/bsc/0x8684e46edb64dca0fc080d94fe638e89bcc18db3",
+        "explorer": "https://bscscan.com/token/0x8637a789974372a80a65901c82fb531298783780"
       }
     },
     {
-      "symbol": "DG",
-      "name": "Dollar General Corporation",
-      "token_address": "0x5a85b0ab9dcb9212254f1e370215fdb88f1f2795",
-      "pool_address": "0x893f51110b872dece17b39e8b0c54e87350cbe81",
-      "reserve_usd": 11751.4994,
-      "volume_24h_usd": 1154.0380936886,
-      "price_usd": 8.61068031077636e-12,
-      "created_at": "2026-10-29T19:08:35Z",
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0xb199849a476c43ec1b30117df865c9ce420f9d7237a592f6e0b97ad14e37d0c6",
+      "reserve_usd": 69487.986,
+      "volume_24h_usd": 55395.3948088329,
+      "price_usd": 0.371712825255467,
+      "created_at": "2026-10-29T23:17:23Z",
+      "age_hours": 0.05,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xb199849a476c43ec1b30117df865c9ce420f9d7237a592f6e0b97ad14e37d0c6",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0xce5371fbec48227bfc0950afdb7734d30d3afb7492aaaf90ece39db83c0daef5",
+      "reserve_usd": 66594.284,
+      "volume_24h_usd": 23635.6950826051,
+      "price_usd": 0.363705071055513,
+      "created_at": "2026-10-29T23:15:59Z",
+      "age_hours": 0.07,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xce5371fbec48227bfc0950afdb7734d30d3afb7492aaaf90ece39db83c0daef5",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "ENA",
+      "name": "ENA",
+      "token_address": "0x57e114b691db790c35207b2e685d4a43181e6061",
+      "pool_address": "0xcadfeee00d37f2e7dbca5e678d06617f9b88015da23b90b7eaf81faea217803d",
+      "reserve_usd": 64909.4719,
+      "volume_24h_usd": 64773.618505584,
+      "price_usd": 0.172884888947425,
+      "created_at": "2026-10-29T23:03:59Z",
+      "age_hours": 0.27,
+      "network": "eth",
+      "website": "https://www.ethena.fi",
+      "twitter_handle": "ethena_labs",
+      "description": "",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/ethena_labs",
+        "x_link_is_self_reported": true,
+        "website": "https://www.ethena.fi",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xcadfeee00d37f2e7dbca5e678d06617f9b88015da23b90b7eaf81faea217803d",
+        "explorer": "https://etherscan.io/token/0x57e114b691db790c35207b2e685d4a43181e6061"
+      }
+    },
+    {
+      "symbol": "GTA6",
+      "name": "GTA6",
+      "token_address": "0xddb4ca2f23ffa925386080cee0a6af36d4050d4a",
+      "pool_address": "0x542f6843f272e2470c89559f7278b0cfb51b332b",
+      "reserve_usd": 47519.0091,
+      "volume_24h_usd": 3893.3536721365,
+      "price_usd": 0.000143756819493451,
+      "created_at": "2026-10-29T23:06:06Z",
+      "age_hours": 0.23,
+      "network": "bsc",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xddb4ca2f23ffa925386080cee0a6af36d4050d4a&chainID=56"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24GTA6%20OR%200xddb4ca2f23ffa925386080cee0a6af36d4050d4a&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/bsc/0x542f6843f272e2470c89559f7278b0cfb51b332b",
+        "explorer": "https://bscscan.com/token/0xddb4ca2f23ffa925386080cee0a6af36d4050d4a"
+      }
+    },
+    {
+      "symbol": "SI",
+      "name": "Stable Inu",
+      "token_address": "J8r8jzXYzaHJZMNb5mt6SwoaP2YuvCpBkfhEJH48u2zh",
+      "pool_address": "5w5wa616ai6UQx7YpuQk1UfNoJH5ZCKw33KNvALM4HFP",
+      "reserve_usd": 42669.4259,
+      "volume_24h_usd": 7009.9273918463,
+      "price_usd": 2.5617409751850396e-05,
+      "created_at": "2026-10-29T23:18:25Z",
+      "age_hours": 0.03,
+      "network": "solana",
+      "website": "https://x.com/thealexmorgan15/status/2115900914468892760",
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "not_supported",
+        "detail": "solana not supported by this honeypot check (EVM-only)"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24SI%20OR%20J8r8jzXYzaHJZMNb5mt6SwoaP2YuvCpBkfhEJH48u2zh&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": "https://x.com/thealexmorgan15/status/2115900914468892760",
+        "website_is_social_post": true,
+        "dexscreener": "https://dexscreener.com/solana/5w5wa616ai6UQx7YpuQk1UfNoJH5ZCKw33KNvALM4HFP",
+        "explorer": "https://solscan.io/token/J8r8jzXYzaHJZMNb5mt6SwoaP2YuvCpBkfhEJH48u2zh"
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0x9d4f2a8ef84e78930b4869b9a3e3bdf5cb21ab0e8a53d2b6f284ff5a93b52cc6",
+      "reserve_usd": 39931.1482,
+      "volume_24h_usd": 38541.6913458062,
+      "price_usd": 0.383545364950249,
+      "created_at": "2026-10-29T23:14:35Z",
       "age_hours": 0.09,
       "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0x9d4f2a8ef84e78930b4869b9a3e3bdf5cb21ab0e8a53d2b6f284ff5a93b52cc6",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0x11400b7347c36ab23b4b03d8ed2e410a6316647beb41c3150ba3936a4e6f7971",
+      "reserve_usd": 35405.797,
+      "volume_24h_usd": 27240.3044699401,
+      "price_usd": 0.338290075385317,
+      "created_at": "2026-10-29T23:08:11Z",
+      "age_hours": 0.2,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0x11400b7347c36ab23b4b03d8ed2e410a6316647beb41c3150ba3936a4e6f7971",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0xe739fd6a622fad021764c78909c0cb0bf83832f632ae77cfec7786bf2a9d1558",
+      "reserve_usd": 34951.2367,
+      "volume_24h_usd": 475323.512126623,
+      "price_usd": 0.360940974991343,
+      "created_at": "2026-10-29T23:06:59Z",
+      "age_hours": 0.22,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xe739fd6a622fad021764c78909c0cb0bf83832f632ae77cfec7786bf2a9d1558",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "ZERODAY",
+      "name": "Zeroday",
+      "token_address": "0xc902195fa04604aa8a8eec29832d36484af87777",
+      "pool_address": "0x5d2ec34d347de831f274f19753023b81362f4f24",
+      "reserve_usd": 30972.0167,
+      "volume_24h_usd": 14355.1948496728,
+      "price_usd": 0.000107119080180621,
+      "created_at": "2026-10-29T23:16:38Z",
+      "age_hours": 0.06,
+      "network": "bsc",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xc902195fa04604aa8a8eec29832d36484af87777&chainID=56"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24ZERODAY%20OR%200xc902195fa04604aa8a8eec29832d36484af87777&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/bsc/0x5d2ec34d347de831f274f19753023b81362f4f24",
+        "explorer": "https://bscscan.com/token/0xc902195fa04604aa8a8eec29832d36484af87777"
+      }
+    },
+    {
+      "symbol": "ENA",
+      "name": "ENA",
+      "token_address": "0x57e114b691db790c35207b2e685d4a43181e6061",
+      "pool_address": "0x3a4fcdf4dc836490c8f54294eeb67662b21ffbc7afa8a57811014e352c69d4a5",
+      "reserve_usd": 29895.2135,
+      "volume_24h_usd": 18291.8701652469,
+      "price_usd": 0.171835625761022,
+      "created_at": "2026-10-29T23:01:47Z",
+      "age_hours": 0.31,
+      "network": "eth",
+      "website": "https://www.ethena.fi",
+      "twitter_handle": "ethena_labs",
+      "description": "",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/ethena_labs",
+        "x_link_is_self_reported": true,
+        "website": "https://www.ethena.fi",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0x3a4fcdf4dc836490c8f54294eeb67662b21ffbc7afa8a57811014e352c69d4a5",
+        "explorer": "https://etherscan.io/token/0x57e114b691db790c35207b2e685d4a43181e6061"
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0xe8421c2cdb7b5c1b78a91fa81a7f142c1a92f08c786d4bcc6eafc59d77388ffc",
+      "reserve_usd": 19899.3376,
+      "volume_24h_usd": 118358.631252945,
+      "price_usd": 0.368405510087264,
+      "created_at": "2026-10-29T23:11:23Z",
+      "age_hours": 0.15,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xe8421c2cdb7b5c1b78a91fa81a7f142c1a92f08c786d4bcc6eafc59d77388ffc",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0xdffdcf73b509bc5bda2d02c3eea18f0d9d8e48b86f14e12bf0c036e5fac1cb24",
+      "reserve_usd": 19883.6463,
+      "volume_24h_usd": 51290.8803141536,
+      "price_usd": 0.370238747135358,
+      "created_at": "2026-10-29T23:08:23Z",
+      "age_hours": 0.2,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xdffdcf73b509bc5bda2d02c3eea18f0d9d8e48b86f14e12bf0c036e5fac1cb24",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0xf6351bb3ef28484a2db56d1ee5dea5da4df48914348f1ba90a6b8b98e4e755ab",
+      "reserve_usd": 19859.1747,
+      "volume_24h_usd": 72113.349806702,
+      "price_usd": 0.359748480491406,
+      "created_at": "2026-10-29T23:05:35Z",
+      "age_hours": 0.24,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xf6351bb3ef28484a2db56d1ee5dea5da4df48914348f1ba90a6b8b98e4e755ab",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "ZI",
+      "name": "Zero Inu",
+      "token_address": "5hhDB3f86BAwCeYiDZXH8m43LicupSyQpd1VTHDqpump",
+      "pool_address": "o7hFGqEAgo8X1Xnha2gf9yTKdqgaeS8kSPNK8vUJVXK",
+      "reserve_usd": 16362.6245,
+      "volume_24h_usd": 57703.0288168564,
+      "price_usd": 6.401556888871835e-05,
+      "created_at": "2026-10-29T23:17:59Z",
+      "age_hours": 0.03,
+      "network": "solana",
+      "website": null,
+      "twitter_handle": "bbaoo777/status/2115939771394445504",
+      "description": "Created on https://rapidlaunch.io",
+      "honeypot": {
+        "status": "not_supported",
+        "detail": "solana not supported by this honeypot check (EVM-only)"
+      },
+      "links": {
+        "x_link": "https://x.com/bbaoo777/status/2115939771394445504",
+        "x_link_is_self_reported": true,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/solana/o7hFGqEAgo8X1Xnha2gf9yTKdqgaeS8kSPNK8vUJVXK",
+        "explorer": "https://solscan.io/token/5hhDB3f86BAwCeYiDZXH8m43LicupSyQpd1VTHDqpump"
+      }
+    },
+    {
+      "symbol": "CRD",
+      "name": "Cerdas",
+      "token_address": "0x08eafa63b79076a076e09f034c52003969b0e782",
+      "pool_address": "0xdb55c51bc80f5bf5c38de9f1045c4ef6d3eb4323",
+      "reserve_usd": 15817.034,
+      "volume_24h_usd": 1547.7730271205,
+      "price_usd": 9.08336247595353e-07,
+      "created_at": "2026-10-29T23:15:20Z",
+      "age_hours": 0.08,
+      "network": "bsc",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x08eafa63b79076a076e09f034c52003969b0e782&chainID=56"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24CRD%20OR%200x08eafa63b79076a076e09f034c52003969b0e782&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/bsc/0xdb55c51bc80f5bf5c38de9f1045c4ef6d3eb4323",
+        "explorer": "https://bscscan.com/token/0x08eafa63b79076a076e09f034c52003969b0e782"
+      }
+    },
+    {
+      "symbol": "ZI",
+      "name": "Zero Inu",
+      "token_address": "0x3b36f21b1883dd70be75aeaaa7ff57e5e1b27777",
+      "pool_address": "0x4bb21147c3aa5f02c420e8de144f375f49b7d0c2",
+      "reserve_usd": 15319.989,
+      "volume_24h_usd": 13614.0199404751,
+      "price_usd": 7.12554106709772e-05,
+      "created_at": "2026-10-29T23:17:26Z",
+      "age_hours": 0.05,
+      "network": "bsc",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x3b36f21b1883dd70be75aeaaa7ff57e5e1b27777&chainID=56"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24ZI%20OR%200x3b36f21b1883dd70be75aeaaa7ff57e5e1b27777&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/bsc/0x4bb21147c3aa5f02c420e8de144f375f49b7d0c2",
+        "explorer": "https://bscscan.com/token/0x3b36f21b1883dd70be75aeaaa7ff57e5e1b27777"
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0xe21909cf6c4e40fea894a0d82c6da5c38c0a12bc9ccef797517ab47b9fb0767c",
+      "reserve_usd": 14979.4577,
+      "volume_24h_usd": 89189.8360804386,
+      "price_usd": 0.370585523012275,
+      "created_at": "2026-10-29T23:11:59Z",
+      "age_hours": 0.14,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xe21909cf6c4e40fea894a0d82c6da5c38c0a12bc9ccef797517ab47b9fb0767c",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0x30728aa6ef104711b413b227f1f15856e29f40e8c9282f9ecb00af1397787bc1",
+      "reserve_usd": 14885.4881,
+      "volume_24h_usd": 72214.5803890693,
+      "price_usd": 0.353095675220111,
+      "created_at": "2026-10-29T23:03:59Z",
+      "age_hours": 0.27,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0x30728aa6ef104711b413b227f1f15856e29f40e8c9282f9ecb00af1397787bc1",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "AAVE",
+      "name": "Aave Token",
+      "token_address": "0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9",
+      "pool_address": "0xcd2fc2c04b0b5ef13223466a72d4abc1bea92cc7b580313b19ad1083d1bdedbe",
+      "reserve_usd": 14867.589,
+      "volume_24h_usd": 77169.1988890302,
+      "price_usd": 117.899244802541,
+      "created_at": "2026-10-29T22:55:35Z",
+      "age_hours": 0.41,
+      "network": "eth",
+      "website": "https://aave.com",
+      "twitter_handle": "aave",
+      "description": "Aave is a decentralized money market protocol where users can lend and borrow cryptocurrency across 20 different assets as collateral. The protocol has a native token called AAVE, which is also a governance token that lets the community decide the direction of the protocol in a collective manner. Lenders can&nbsp;earn interest by providing liquidity to the market, while borrowers can borrow by collateralizing their cryptoassets to take out loans from the liquidity pools.\n\n",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/aave",
+        "x_link_is_self_reported": true,
+        "website": "https://aave.com",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0xcd2fc2c04b0b5ef13223466a72d4abc1bea92cc7b580313b19ad1083d1bdedbe",
+        "explorer": "https://etherscan.io/token/0x7fc66500c84a76ad7e9c93437bfc5ac33e2ddae9"
+      }
+    },
+    {
+      "symbol": "MUSTANG",
+      "name": "Savage Volcano Runner",
+      "token_address": "0x5a169162a1cbed994edb56a5425417ae3caf2f0d",
+      "pool_address": "0x712ef91a6341237646dc8d428f1258815d9da07f",
+      "reserve_usd": 12393.1921,
+      "volume_24h_usd": 2390.8060495598,
+      "price_usd": 7.71827433549043e-05,
+      "created_at": "2026-10-29T23:05:44Z",
+      "age_hours": 0.24,
+      "network": "bsc",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x5a169162a1cbed994edb56a5425417ae3caf2f0d&chainID=56"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24MUSTANG%20OR%200x5a169162a1cbed994edb56a5425417ae3caf2f0d&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/bsc/0x712ef91a6341237646dc8d428f1258815d9da07f",
+        "explorer": "https://bscscan.com/token/0x5a169162a1cbed994edb56a5425417ae3caf2f0d"
+      }
+    },
+    {
+      "symbol": "ONDO",
+      "name": "Ondo",
+      "token_address": "0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3",
+      "pool_address": "0x7465a207dbd432e126a5e26949999d463a8120700d161c4b11f853d32726ddf9",
+      "reserve_usd": 9995.6328,
+      "volume_24h_usd": 13775.08239595,
+      "price_usd": 0.3475855123859,
+      "created_at": "2026-10-29T23:06:59Z",
+      "age_hours": 0.22,
+      "network": "eth",
+      "website": "https://ondo.foundation",
+      "twitter_handle": "OndoFoundation",
+      "description": "The Ondo Foundation was founded in 2022 as an independently governed and nonprofit Cayman Islands Foundation Company with no beneficial owners. The Ondo Foundation assisted in the launch of the Ondo DAO, which deployed and currently governs Flux Finance, the first lending protocol supporting tokenized securities as collateral.\n\nONDO token holders are entrusted with shaping the future of the Ondo DAO so that it continues to pursue its mission to democratize access to institutional-grade finance. The Ondo DAO gives ONDO holders specific rights pertaining to Flux Finance, which is currently governed by the Ondo DAO.",
+      "honeypot": {
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
+      },
+      "links": {
+        "x_link": "https://x.com/OndoFoundation",
+        "x_link_is_self_reported": true,
+        "website": "https://ondo.foundation",
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/eth/0x7465a207dbd432e126a5e26949999d463a8120700d161c4b11f853d32726ddf9",
+        "explorer": "https://etherscan.io/token/0xfaba6f8e4a5e8ab82f62fe7c39859fa577269be3"
+      }
+    },
+    {
+      "symbol": "ZERODAY",
+      "name": "Zeroday",
+      "token_address": "0x773f6c257c41147089412292882a4d5a264c7777",
+      "pool_address": "0x3d0861bab8582c286038931ad0842d48050e05b2",
+      "reserve_usd": 8976.9997,
+      "volume_24h_usd": 1246.4229412409,
+      "price_usd": 2.69959291394717e-05,
+      "created_at": "2026-10-29T23:18:57Z",
+      "age_hours": 0.02,
+      "network": "bsc",
+      "website": null,
+      "twitter_handle": null,
+      "description": null,
+      "honeypot": {
+        "status": "unknown",
+        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x773f6c257c41147089412292882a4d5a264c7777&chainID=56"
+      },
+      "links": {
+        "x_link": "https://x.com/search?q=%24ZERODAY%20OR%200x773f6c257c41147089412292882a4d5a264c7777&src=typed_query&f=live",
+        "x_link_is_self_reported": false,
+        "website": null,
+        "website_is_social_post": false,
+        "dexscreener": "https://dexscreener.com/bsc/0x3d0861bab8582c286038931ad0842d48050e05b2",
+        "explorer": "https://bscscan.com/token/0x773f6c257c41147089412292882a4d5a264c7777"
+      }
+    },
+    {
+      "symbol": "ANTHROPIC",
+      "name": "ANTHROPIC",
+      "token_address": "0x6a479975a72055f76f0b3a5aec2166eafa14e82c",
+      "pool_address": "0x95a8c534999d269ad6ae0425bacbbba62f5f718d",
+      "reserve_usd": 8229.6104,
+      "volume_24h_usd": 1802.679217653,
+      "price_usd": 1.16820049453035e-06,
+      "created_at": "2026-10-29T23:11:31Z",
+      "age_hours": 0.14,
+      "network": "base",
       "website": null,
       "twitter_handle": null,
       "description": null,
@@ -290,120 +695,39 @@
         "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24DG%20OR%200x5a85b0ab9dcb9212254f1e370215fdb88f1f2795&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24ANTHROPIC%20OR%200x6a479975a72055f76f0b3a5aec2166eafa14e82c&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/eth/0x893f51110b872dece17b39e8b0c54e87350cbe81",
-        "explorer": "https://etherscan.io/token/0x5a85b0ab9dcb9212254f1e370215fdb88f1f2795"
+        "dexscreener": "https://dexscreener.com/base/0x95a8c534999d269ad6ae0425bacbbba62f5f718d",
+        "explorer": "https://basescan.org/token/0x6a479975a72055f76f0b3a5aec2166eafa14e82c"
       }
     },
     {
-      "symbol": "\u60b2\u4f24\u86d9",
-      "name": "\u666f\u751c\u60b2\u4f24\u86d9",
-      "token_address": "0xcd0e6df0f2d1a2a2101262f9352da5f19a6d7777",
-      "pool_address": "0x265d2084112bd46e7bcc84126b8c46e1336c7ccb",
-      "reserve_usd": 11740.6352,
-      "volume_24h_usd": 5806.3790850686,
-      "price_usd": 3.73938994582459e-05,
-      "created_at": "2026-10-29T19:10:33Z",
-      "age_hours": 0.05,
-      "network": "bsc",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xcd0e6df0f2d1a2a2101262f9352da5f19a6d7777&chainID=56"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24%E6%82%B2%E4%BC%A4%E8%9B%99%20OR%200xcd0e6df0f2d1a2a2101262f9352da5f19a6d7777&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0x265d2084112bd46e7bcc84126b8c46e1336c7ccb",
-        "explorer": "https://bscscan.com/token/0xcd0e6df0f2d1a2a2101262f9352da5f19a6d7777"
-      }
-    },
-    {
-      "symbol": "FUSP",
-      "name": "Fun Spirit",
-      "token_address": "0xbfa920590b79dd9184c5a0f5dddd362a96399c0b",
-      "pool_address": "0x4f1cceb8ac631911df7a9ea7bf67f6e0095ac777",
-      "reserve_usd": 11001.0534,
-      "volume_24h_usd": 1282.2245874694,
-      "price_usd": 3.33127808977582e-07,
-      "created_at": "2026-10-29T19:04:22Z",
-      "age_hours": 0.16,
-      "network": "bsc",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xbfa920590b79dd9184c5a0f5dddd362a96399c0b&chainID=56"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24FUSP%20OR%200xbfa920590b79dd9184c5a0f5dddd362a96399c0b&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/bsc/0x4f1cceb8ac631911df7a9ea7bf67f6e0095ac777",
-        "explorer": "https://bscscan.com/token/0xbfa920590b79dd9184c5a0f5dddd362a96399c0b"
-      }
-    },
-    {
-      "symbol": "HI",
-      "name": "HYPER INU",
-      "token_address": "0xe78f1b67c3c5d7e8c9836061621f8e0ca914d16a",
-      "pool_address": "0x9e50f638b93e36856deebcb45cd9c1cb10fe8b0e675b32390acd862ead60d1d9",
-      "reserve_usd": 10993.2781,
-      "volume_24h_usd": 26202.6706267171,
-      "price_usd": 1.90548868270077e-05,
-      "created_at": "2026-10-29T18:08:23Z",
-      "age_hours": 1.09,
-      "network": "eth",
-      "website": null,
-      "twitter_handle": null,
-      "description": null,
-      "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0xe78f1b67c3c5d7e8c9836061621f8e0ca914d16a&chainID=1"
-      },
-      "links": {
-        "x_link": "https://x.com/search?q=%24HI%20OR%200xe78f1b67c3c5d7e8c9836061621f8e0ca914d16a&src=typed_query&f=live",
-        "x_link_is_self_reported": false,
-        "website": null,
-        "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/eth/0x9e50f638b93e36856deebcb45cd9c1cb10fe8b0e675b32390acd862ead60d1d9",
-        "explorer": "https://etherscan.io/token/0xe78f1b67c3c5d7e8c9836061621f8e0ca914d16a"
-      }
-    },
-    {
-      "symbol": "WINNY",
-      "name": "WINNY",
-      "token_address": "0x4c39adf7b5d4dd0439853622364394a17cf400eb",
-      "pool_address": "0xa5f3feb616bbcd0181ac548eaa7378822a7862e4b73806c7e288b2e3472767dc",
-      "reserve_usd": 5429.4311,
-      "volume_24h_usd": 1000.4142906705,
-      "price_usd": 5.81805571131493e-06,
-      "created_at": "2026-10-29T19:07:09Z",
-      "age_hours": 0.11,
+      "symbol": "LAPTOP",
+      "name": "LAPTOP",
+      "token_address": "0x1d34efc9f7b39eb0eeed985c80cde551b57187bf",
+      "pool_address": "0x3ae42f2b2afbdaa3a6dd12ef913140bd67d08c38",
+      "reserve_usd": 8139.3495,
+      "volume_24h_usd": 1007.3472680518,
+      "price_usd": 9.06358371100996e-07,
+      "created_at": "2026-10-29T23:11:13Z",
+      "age_hours": 0.15,
       "network": "base",
       "website": null,
       "twitter_handle": null,
       "description": null,
       "honeypot": {
-        "status": "unknown",
-        "detail": "Check failed: 404 Client Error: Not Found for url: https://api.honeypot.is/v2/IsHoneypot?address=0x4c39adf7b5d4dd0439853622364394a17cf400eb&chainID=8453"
+        "status": "checked_ok",
+        "detail": "honeypot.is found no sell restriction -- NOT a full safety guarantee"
       },
       "links": {
-        "x_link": "https://x.com/search?q=%24WINNY%20OR%200x4c39adf7b5d4dd0439853622364394a17cf400eb&src=typed_query&f=live",
+        "x_link": "https://x.com/search?q=%24LAPTOP%20OR%200x1d34efc9f7b39eb0eeed985c80cde551b57187bf&src=typed_query&f=live",
         "x_link_is_self_reported": false,
         "website": null,
         "website_is_social_post": false,
-        "dexscreener": "https://dexscreener.com/base/0xa5f3feb616bbcd0181ac548eaa7378822a7862e4b73806c7e288b2e3472767dc",
-        "explorer": "https://basescan.org/token/0x4c39adf7b5d4dd0439853622364394a17cf400eb"
+        "dexscreener": "https://dexscreener.com/base/0x3ae42f2b2afbdaa3a6dd12ef913140bd67d08c38",
+        "explorer": "https://basescan.org/token/0x1d34efc9f7b39eb0eeed985c80cde551b57187bf"
       }
     }
   ]
